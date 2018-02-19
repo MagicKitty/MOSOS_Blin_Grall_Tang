@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="st ≔ initial" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="queue ≔ Queue_init" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="sortie ≔ ∅" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.refinesMachine name="(" org.eventb.core.target="M0"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="C1"/>
+<org.eventb.core.variable name="*" org.eventb.core.identifier="st"/>
+<org.eventb.core.invariant name="+" org.eventb.core.label="inv1" org.eventb.core.predicate="st ∈ States"/>
+<org.eventb.core.invariant name="," org.eventb.core.label="inv2" org.eventb.core.predicate="state = init ⇔ st = initial"/>
+<org.eventb.core.invariant name="-" org.eventb.core.label="inv3" org.eventb.core.predicate="state = passage ⇔ (st = spassage ∨ st = fermeture)"/>
+<org.eventb.core.variable name="." org.eventb.core.identifier="queue"/>
+<org.eventb.core.invariant name="/" org.eventb.core.label="inv4" org.eventb.core.predicate="queue ∈ ℙ(Personnes×Passeports)"/>
+<org.eventb.core.variable name="2" org.eventb.core.identifier="sortie"/>
+<org.eventb.core.invariant name="3" org.eventb.core.label="inv5" org.eventb.core.predicate="sortie ∈ ℙ(Personnes×Passeports)"/>
+<org.eventb.core.invariant name="4" org.eventb.core.label="inv6" org.eventb.core.predicate="queue ∩ sortie = ∅"/>
+<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="passage1">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="pers"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="pass"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="pers ∈ queue"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="pass ∈ Passeports"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="st = initial"/>
+<org.eventb.core.refinesEvent name="," org.eventb.core.target="passage"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

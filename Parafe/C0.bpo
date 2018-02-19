@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="6">
+<org.eventb.core.poFile org.eventb.core.poStamp="8">
 <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="6">
 <org.eventb.core.poIdentifier name="Etats" org.eventb.core.type="ℙ(Etats)"/>
 <org.eventb.core.poIdentifier name="OF" org.eventb.core.type="ℙ(OF)"/>

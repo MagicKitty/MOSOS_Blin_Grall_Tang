@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="3">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poFile org.eventb.core.poStamp="8">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="8">
 <org.eventb.core.poIdentifier name="Etats" org.eventb.core.type="ℙ(Etats)"/>
 <org.eventb.core.poIdentifier name="OF" org.eventb.core.type="ℙ(OF)"/>
 <org.eventb.core.poIdentifier name="Passeports" org.eventb.core.type="ℙ(Passeports)"/>
@@ -17,8 +17,14 @@
 <org.eventb.core.poPredicate name="Passeportu" org.eventb.core.predicate="partition(Validite,{oui},{non})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#4"/>
 <org.eventb.core.poPredicate name="Passeportv" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#8"/>
 <org.eventb.core.poPredicate name="Passeportw" org.eventb.core.predicate="partition(Etats,{init},{passage})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#="/>
-<org.eventb.core.poIdentifier name="Lieu" org.eventb.core.type="ℙ(Lieu)"/>
-<org.eventb.core.poIdentifier name="Queue_init" org.eventb.core.type="ℙ(Queue_init)"/>
+<org.eventb.core.poIdentifier name="States" org.eventb.core.type="ℙ(States)"/>
+<org.eventb.core.poIdentifier name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.poIdentifier name="fermeture" org.eventb.core.type="States"/>
+<org.eventb.core.poIdentifier name="initial" org.eventb.core.type="States"/>
+<org.eventb.core.poIdentifier name="spassage" org.eventb.core.type="States"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="8">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(States,{initial},{spassage},{fermeture})" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_igQyMBWDEeijPo80ZR4tpV"/>
+</org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

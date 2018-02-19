@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
-<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="passage/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="passage/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="fermeture/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="12" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="passage/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="passage/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fermeture/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>

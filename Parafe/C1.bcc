@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.scContextFile org.eventb.core.accurate="false" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase">
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase">
 <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/Parafe/C0.bcc|org.eventb.core.scContextFile#C0" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.extendsContext#'"/>
 <org.eventb.core.scInternalContext name="C0">
 <org.eventb.core.scAxiom name="'" org.eventb.core.label="axm3" org.eventb.core.predicate="valide∈Passeports × Personnes → Validite" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#." org.eventb.core.theorem="false"/>
@@ -19,6 +19,11 @@
 <org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="passage" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#;" org.eventb.core.type="Etats"/>
 <org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="valide" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#-" org.eventb.core.type="ℙ(Passeports×Personnes×Validite)"/>
 </org.eventb.core.scInternalContext>
-<org.eventb.core.scCarrierSet name="Lieu" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(Lieu)"/>
-<org.eventb.core.scCarrierSet name="Queue_init" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.carrierSet#." org.eventb.core.type="ℙ(Queue_init)"/>
+<org.eventb.core.scAxiom name="C1" org.eventb.core.label="axm1" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#1" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="C2" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(States,{initial},{spassage},{fermeture})" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_igQyMBWDEeijPo80ZR4tpV" org.eventb.core.theorem="false"/>
+<org.eventb.core.scConstant name="Queue_init" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.constant#_igQyMBWDEeijPo80ZR4tpQ" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.scCarrierSet name="States" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.carrierSet#_igQyMBWDEeijPo80ZR4tpR" org.eventb.core.type="ℙ(States)"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="fermeture" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.constant#_igQyMBWDEeijPo80ZR4tpU" org.eventb.core.type="States"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="initial" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.constant#_igQyMBWDEeijPo80ZR4tpS" org.eventb.core.type="States"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="spassage" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.constant#_igQyMBWDEeijPo80ZR4tpT" org.eventb.core.type="States"/>
 </org.eventb.core.scContextFile>

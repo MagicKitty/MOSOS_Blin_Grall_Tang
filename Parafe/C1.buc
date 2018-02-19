@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.texttools.text_lastmodified="1519050473026" org.eventb.texttools.text_representation="context C1 extends C0&#10;&#10;sets Lieu // Dans la file, dans la cabine du Parafe, de l'autre coté&#10;     Queue_init&#10;axioms&#10;  @axm1 Queue_init ∈ ℙ(Personnes)&#10;end&#10;" version="3">
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.texttools.text_lastmodified="1519051533516" org.eventb.texttools.text_representation="context C1 extends C0&#10;&#10;constants Queue_init&#10;&#10;axioms&#10;  @axm1 Queue_init ∈ ℙ(Personnes)&#10;end&#10;" version="3">
 <org.eventb.core.extendsContext name="'" org.eventb.core.target="C0"/>
-<org.eventb.core.carrierSet name="(" org.eventb.core.comment="Dans la file, dans la cabine du Parafe, de l'autre coté" org.eventb.core.identifier="Lieu"/>
-<org.eventb.core.carrierSet name="." org.eventb.core.identifier="Queue_init"/>
-<org.eventb.core.axiom name="1" org.eventb.core.label="axm1" org.eventb.core.predicate="Queue_init ∈ ℙ(Personnes)"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm1" org.eventb.core.predicate="Queue_init ∈ ℙ(Personnes×Passeports)"/>
+<org.eventb.core.constant name="_igQyMBWDEeijPo80ZR4tpQ" org.eventb.core.identifier="Queue_init"/>
+<org.eventb.core.carrierSet name="_igQyMBWDEeijPo80ZR4tpR" org.eventb.core.identifier="States"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="_igQyMBWDEeijPo80ZR4tpS" org.eventb.core.identifier="initial"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="_igQyMBWDEeijPo80ZR4tpT" org.eventb.core.identifier="spassage"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="_igQyMBWDEeijPo80ZR4tpU" org.eventb.core.identifier="fermeture"/>
+<org.eventb.core.axiom name="_igQyMBWDEeijPo80ZR4tpV" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(States, {initial}, {spassage}, {fermeture})"/>
 </org.eventb.core.contextFile>
