@@ -1,4 +1,4 @@
 # MOSOS
-Nicolas Blin
-Alexis Grall
-Wanyanyuan Tang
+Nicolas Blin  
+Alexis Grall  
+Wanyanyuan Tang  
