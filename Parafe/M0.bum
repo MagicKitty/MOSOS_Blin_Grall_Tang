@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1519048393192" org.eventb.texttools.text_representation="machine M0 sees C0&#10;&#10;variables porte state&#10;&#10;invariants&#10;  @inv1 porte ∈ OF&#10;  @inv2 state ∈ Etats&#10;  @inv3 state = passage ⇒ porte = ouvert&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act1 porte ≔ ferme&#10;      @act2 state ≔ init&#10;  end&#10;&#10;  event passage&#10;    any pers pass&#10;    where&#10;      @grd1 pers ∈ Personnes&#10;      @grd2 pass ∈ Passeports&#10;      @grd3 valide(pass ↦ pers) = oui&#10;      @grd4 state = init&#10;    then&#10;      @act1 porte ≔ ouvert&#10;      @act2 state ≔ passage&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.seesContext name="(" org.eventb.core.target="C0"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="(" org.eventb.core.assignment="porte ≔ ferme" org.eventb.core.label="act1"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="state ≔ init" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="," org.eventb.core.identifier="porte"/>
+<org.eventb.core.invariant name="-" org.eventb.core.label="inv1" org.eventb.core.predicate="porte ∈ OF"/>
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="passage">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="pers"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="pers ∈ Personnes"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="porte ≔ ouvert" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="pass ∈ Passeports"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="pass"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="valide(pass ↦ pers) = oui"/>
+<org.eventb.core.guard name="_GTPnABV8EeijPo80ZR4tpQ" org.eventb.core.label="grd4" org.eventb.core.predicate="state = init"/>
+<org.eventb.core.action name="_I2_9MBV8EeijPo80ZR4tpQ" org.eventb.core.assignment="state ≔ passage" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="/" org.eventb.core.identifier="state"/>
+<org.eventb.core.invariant name="0" org.eventb.core.label="inv2" org.eventb.core.predicate="state ∈ Etats"/>
+<org.eventb.core.invariant name="_OkBKYBV8EeijPo80ZR4tpQ" org.eventb.core.label="inv3" org.eventb.core.predicate="state = passage ⇒ porte = ouvert"/>
+<org.eventb.core.event name="_OkBKYBV8EeijPo80ZR4tpR" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="fermeture">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="porte = ouvert"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="state = passage"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="porte ≔ ferme" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="state ≔ init" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;de.prob.units.mchBase" version="3">
+<org.eventb.core.carrierSet name="(" org.eventb.core.comment="Ensemble des personnes dans la file" org.eventb.core.identifier="Personnes"/>
+<org.eventb.core.carrierSet name="," org.eventb.core.comment="Ensemble des passeports possédées par les personnes" org.eventb.core.identifier="Passeports"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="-" org.eventb.core.identifier="valide"/>
+<org.eventb.core.axiom name="." org.eventb.core.label="axm3" org.eventb.core.predicate="valide ∈ ((Passeports × Personnes) → Validite)"/>
+<org.eventb.core.carrierSet name="1" org.eventb.core.comment="{oui, non} oui pour un passeport valide, non pour un passeport non valide" org.eventb.core.identifier="Validite"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="2" org.eventb.core.identifier="oui"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="3" org.eventb.core.identifier="non"/>
+<org.eventb.core.axiom name="4" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(Validite, {oui}, {non})"/>
+<org.eventb.core.carrierSet name="5" org.eventb.core.comment="{ouvert, ferme} désigne l'état d'une porte" org.eventb.core.identifier="OF"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="6" org.eventb.core.identifier="ouvert"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="7" org.eventb.core.identifier="ferme"/>
+<org.eventb.core.axiom name="8" org.eventb.core.label="axm5" org.eventb.core.predicate="partition(OF, {ouvert}, {ferme})"/>
+<org.eventb.core.carrierSet name="9" org.eventb.core.comment="{init, passage}" org.eventb.core.identifier="Etats"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=":" org.eventb.core.identifier="init"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=";" org.eventb.core.identifier="passage"/>
+<org.eventb.core.axiom name="=" org.eventb.core.label="axm6" org.eventb.core.predicate="partition(Etats, {init}, {passage})"/>
+</org.eventb.core.contextFile>

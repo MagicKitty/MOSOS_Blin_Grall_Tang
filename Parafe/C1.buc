@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.texttools.text_lastmodified="1519050473026" org.eventb.texttools.text_representation="context C1 extends C0&#10;&#10;sets Lieu // Dans la file, dans la cabine du Parafe, de l'autre coté&#10;     Queue_init&#10;axioms&#10;  @axm1 Queue_init ∈ ℙ(Personnes)&#10;end&#10;" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="C0"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.comment="Dans la file, dans la cabine du Parafe, de l'autre coté" org.eventb.core.identifier="Lieu"/>
+<org.eventb.core.carrierSet name="." org.eventb.core.identifier="Queue_init"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm1" org.eventb.core.predicate="Queue_init ∈ ℙ(Personnes)"/>
+</org.eventb.core.contextFile>
