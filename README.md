@@ -1,1 +1,4 @@
-# MOSOS_Blin_Grall_Tang
+# MOSOS
+Nicolas Blin
+Alexis Grall
+Wanyanyuan Tang
