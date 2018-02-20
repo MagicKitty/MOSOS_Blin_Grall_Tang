@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="7">
+<org.eventb.core.poFile org.eventb.core.poStamp="8">
 <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="6">
 <org.eventb.core.poIdentifier name="OF" org.eventb.core.type="ℙ(OF)"/>
 <org.eventb.core.poIdentifier name="Passeports" org.eventb.core.type="ℙ(Passeports)"/>
@@ -19,8 +19,9 @@
 <org.eventb.core.poIdentifier name="entree_sas" org.eventb.core.type="Etats"/>
 <org.eventb.core.poIdentifier name="sortie_sas" org.eventb.core.type="Etats"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="8">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="entree_sas∈Etats" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#,"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="sortie_sas∈Etats" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_-8NUsBZPEeiVKKzr1gFDUA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(Etats,{entree_sas},{sortie_sas})" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_-8NUsRZPEeiVKKzr1gFDUA"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
