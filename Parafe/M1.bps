@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
-<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="26" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="26" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="26" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="passage1/inv2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="26" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="passage1/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="26" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="passage1/grd3/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="26" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="passage1/grd4/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="26" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="passage1/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="26" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="36" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ouverture/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="36" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ouverture/grd3/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="36" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ouverture/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.poStamp="37" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>
