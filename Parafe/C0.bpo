@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="10">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="10">
+<org.eventb.core.poFile org.eventb.core.poStamp="12">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="12">
 <org.eventb.core.poIdentifier name="OF" org.eventb.core.type="ℙ(OF)"/>
 <org.eventb.core.poIdentifier name="Passeports" org.eventb.core.type="ℙ(Passeports)"/>
 <org.eventb.core.poIdentifier name="Personnes" org.eventb.core.type="ℙ(Personnes)"/>
@@ -10,11 +10,11 @@
 <org.eventb.core.poIdentifier name="non" org.eventb.core.type="Validite"/>
 <org.eventb.core.poIdentifier name="oui" org.eventb.core.type="Validite"/>
 <org.eventb.core.poIdentifier name="ouvert" org.eventb.core.type="OF"/>
-<org.eventb.core.poIdentifier name="valide" org.eventb.core.type="ℙ(Passeports×Personnes×Validite)"/>
+<org.eventb.core.poIdentifier name="valide" org.eventb.core.type="ℙ(Personnes×Passeports×Validite)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C0.bpo|org.eventb.core.poFile#C0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="10">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#."/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="valide∈Passeports × Personnes → Validite" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#4"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C0.bpo|org.eventb.core.poFile#C0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="12">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Queue_init⊆Personnes × Passeports" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#4"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(Validite,{oui},{non})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#8"/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#="/>
 </org.eventb.core.poPredicateSet>

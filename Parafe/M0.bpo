@@ -1,41 +1,91 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="18">
-<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="16">
-<org.eventb.core.poIdentifier name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.poFile org.eventb.core.poStamp="24">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="23">
 <org.eventb.core.poIdentifier name="OF" org.eventb.core.type="ℙ(OF)"/>
 <org.eventb.core.poIdentifier name="Passeports" org.eventb.core.type="ℙ(Passeports)"/>
 <org.eventb.core.poIdentifier name="Personnes" org.eventb.core.type="ℙ(Personnes)"/>
 <org.eventb.core.poIdentifier name="Validite" org.eventb.core.type="ℙ(Validite)"/>
 <org.eventb.core.poIdentifier name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.poIdentifier name="ferme" org.eventb.core.type="OF"/>
-<org.eventb.core.poIdentifier name="init" org.eventb.core.type="Etats"/>
 <org.eventb.core.poIdentifier name="non" org.eventb.core.type="Validite"/>
 <org.eventb.core.poIdentifier name="oui" org.eventb.core.type="Validite"/>
 <org.eventb.core.poIdentifier name="ouvert" org.eventb.core.type="OF"/>
-<org.eventb.core.poIdentifier name="passage" org.eventb.core.type="Etats"/>
-<org.eventb.core.poIdentifier name="valide" org.eventb.core.type="ℙ(Passeports×Personnes×Validite)"/>
-<org.eventb.core.poPredicate name="Queue_iniu" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#."/>
-<org.eventb.core.poPredicate name="Queue_iniv" org.eventb.core.predicate="valide∈Passeports × Personnes → Validite" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#4"/>
+<org.eventb.core.poIdentifier name="valide" org.eventb.core.type="ℙ(Personnes×Passeports×Validite)"/>
+<org.eventb.core.poPredicate name="Queue_iniu" org.eventb.core.predicate="Queue_init⊆Personnes × Passeports" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="Queue_iniv" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#4"/>
 <org.eventb.core.poPredicate name="Queue_iniw" org.eventb.core.predicate="partition(Validite,{oui},{non})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#8"/>
 <org.eventb.core.poPredicate name="Queue_inix" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#="/>
-<org.eventb.core.poPredicate name="Queue_iniy" org.eventb.core.predicate="partition(Etats,{init},{passage})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#_4FzFQBZJEeiVKKzr1gFDUA"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="23">
 <org.eventb.core.poIdentifier name="queue" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.poIdentifier name="sortie" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTsortif" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="inv5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="23">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#HYPC4"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie⇒p∈dom(valide)∧valide∈Personnes × Passeports ⇸ Validite" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUD"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUD"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#HYPC4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="23">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTALLHYPsortif"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(Personnes×Passeports))∪Queue_init=Queue_init" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUB"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUB"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#HYPC4|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="23">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTALLHYPsortif"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(Personnes×Passeports))∩Queue_init=(∅ ⦂ ℙ(Personnes×Passeports))" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUC"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUC"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#HYPC4|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="23">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTALLHYPsortif"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈(∅ ⦂ ℙ(Personnes×Passeports))⇒valide(p)=oui" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUD"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUD"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poSequent#INITIALISATION\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsortif" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="23">
 <org.eventb.core.poIdentifier name="queue'" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.poIdentifier name="sortie'" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPsortif" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTsortif" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poSequent name="passage/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="EVTALLHYPsortif" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTsortif" org.eventb.core.poStamp="23"/>
+<org.eventb.core.poSequent name="passage/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="24">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTHYPsortig("/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="pass ↦ pers∈dom(valide)∧valide∈Passeports × Personnes ⇸ Validite" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#.|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="pers ↦ pass∈dom(valide)∧valide∈Personnes × Passeports ⇸ Validite" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#.|org.eventb.core.guard#,"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#.|org.eventb.core.guard#,"/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTHYPsortig("/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTsortig" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="passage/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="24">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTALLHYPsortig"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(sortie∪{pers ↦ pass})∪(queue ∖ {pers ↦ pass})=Queue_init" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUB"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUB"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poSequent#passage\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#HYPC4|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="passage/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="24">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTALLHYPsortig"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(sortie∪{pers ↦ pass})∩(queue ∖ {pers ↦ pass})=(∅ ⦂ ℙ(Personnes×Passeports))" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUC"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUC"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poSequent#passage\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#HYPC4|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="passage/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="24">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTALLHYPsortig"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie∪{pers ↦ pass}⇒valide(p)=oui" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUD"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUD"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poSequent#passage\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsortig" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="23">
 <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="Passeports"/>
 <org.eventb.core.poIdentifier name="queue'" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.poIdentifier name="pers" org.eventb.core.type="Personnes"/>
@@ -45,11 +95,16 @@
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pers∈Personnes" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#.|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass∈Passeports" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#.|org.eventb.core.guard#*"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPsortig" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTHYPsortig(" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="valide(pass ↦ pers)=oui" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#.|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPsortig" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTHYPsortig(" org.eventb.core.poStamp="24">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="valide(pers ↦ pass)=oui" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#.|org.eventb.core.guard#,"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="HYPC4" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="queue∈ℙ(Personnes × Passeports)" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#-"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="sortie∈ℙ(Personnes × Passeports)" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="sortie∪queue=Queue_init" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUB"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="sortie∩queue=(∅ ⦂ ℙ(Personnes×Passeports))" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUC"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#HYPC4" org.eventb.core.poStamp="23">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie⇒valide(p)=oui" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_kxu-IBZKEeiVKKzr1gFDUD"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
