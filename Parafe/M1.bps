@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
-<org.eventb.core.psStatus name="inv9/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="57" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="inv10/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="57" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="58" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="58" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="58" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="58" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="58" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv10/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="58" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="entrer/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="57" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="entrer/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="57" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="entrer/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="57" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="entrer/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="57" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="entrer/inv9/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="57" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="entrer/inv10/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="57" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="entrer/queue/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="58" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/pass/WFIS" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/pers/WFIS" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/inv10/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/grd3/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/grd4/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/act2/SIM" org.eventb.core.confidence="0" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="sortir/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="inv9/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="inv10/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv10/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="entrer/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="entrer/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="entrer/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="entrer/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="entrer/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="entrer/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="entrer/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="entrer/inv10/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="entrer/queue/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="68" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="sortir/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/pass/WFIS" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/pers/WFIS" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/inv10/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/grd3/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="sortir/grd4/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="68" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="sortir/act2/SIM" org.eventb.core.confidence="0" org.eventb.core.poStamp="68" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="sortir/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>
