@@ -5,7 +5,7 @@
 <org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="23" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="23" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="passage/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="24" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="passage/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="24" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="passage/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="24" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="passage/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="24" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="passage/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="25" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="passage/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="25" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="passage/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="25" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>
