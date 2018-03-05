@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;de.prob.units.mchBase">
-<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="Queue_init⊆Personnes × Passeports" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#." org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#." org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(Queue_init)" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#4" org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#8" org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name="*" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(Validite,{oui},{non})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#=" org.eventb.core.theorem="false"/>
-<org.eventb.core.scAxiom name="+" org.eventb.core.label="axm5" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#_5bfvEBZYEeiVKKzr1gFDUA" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="+" org.eventb.core.label="axm5" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#_hp8CICCPEeiK-4ay-k1Rtg" org.eventb.core.theorem="false"/>
 <org.eventb.core.scCarrierSet name="OF" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#5" org.eventb.core.type="ℙ(OF)"/>
 <org.eventb.core.scCarrierSet name="Passeports" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#," org.eventb.core.type="ℙ(Passeports)"/>
 <org.eventb.core.scCarrierSet name="Personnes" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(Personnes)"/>

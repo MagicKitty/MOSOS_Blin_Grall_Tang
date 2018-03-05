@@ -3,22 +3,19 @@
 <org.eventb.core.seesContext name="(" org.eventb.core.target="C0"/>
 <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="(" org.eventb.core.assignment="queue ≔  Queue_init" org.eventb.core.label="act1"/>
-<org.eventb.core.action name=")" org.eventb.core.assignment="sortie ≔  ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="sortie ≔  ∅" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="," org.eventb.core.identifier="queue"/>
-<org.eventb.core.invariant name="-" org.eventb.core.label="inv1" org.eventb.core.predicate="queue ∈ ℙ(Personnes×Passeports)"/>
+<org.eventb.core.invariant name="-" org.eventb.core.label="inv1" org.eventb.core.predicate="queue ∈ ℙ(Queue_init)"/>
 <org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="passage">
-<org.eventb.core.parameter name="'" org.eventb.core.identifier="pers"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="pers ∈ Personnes"/>
-<org.eventb.core.action name="_9lYTYBZJEeiVKKzr1gFDUA" org.eventb.core.assignment="queue ≔ queue∖{pers ↦ pass}" org.eventb.core.label="act2"/>
-<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="pass ∈ Passeports"/>
-<org.eventb.core.parameter name="+" org.eventb.core.identifier="pass"/>
-<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="valide(pers ↦ pass) = oui"/>
-<org.eventb.core.action name="_I2_9MBV8EeijPo80ZR4tpQ" org.eventb.core.assignment="sortie ≔ sortie ∪ {pers ↦ pass}" org.eventb.core.label="act1"/>
-<org.eventb.core.guard name="_I2_9MBV8EeijPo80ZR4tpR" org.eventb.core.label="grd4" org.eventb.core.predicate="(pers ↦ pass) ∈ queue"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ queue"/>
+<org.eventb.core.action name="_9lYTYBZJEeiVKKzr1gFDUA" org.eventb.core.assignment="queue ≔ queue∖{p}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="valide(p) = oui"/>
+<org.eventb.core.action name="_I2_9MBV8EeijPo80ZR4tpQ" org.eventb.core.assignment="sortie ≔ sortie ∪ {p}" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="/" org.eventb.core.identifier="sortie"/>
-<org.eventb.core.invariant name="_kxu-IBZKEeiVKKzr1gFDUA" org.eventb.core.label="inv2" org.eventb.core.predicate="sortie ∈ ℙ(Personnes×Passeports)"/>
+<org.eventb.core.invariant name="_kxu-IBZKEeiVKKzr1gFDUA" org.eventb.core.label="inv2" org.eventb.core.predicate="sortie ∈ ℙ(Queue_init)"/>
 <org.eventb.core.invariant name="_kxu-IBZKEeiVKKzr1gFDUB" org.eventb.core.label="inv3" org.eventb.core.predicate="sortie ∪ queue = Queue_init"/>
 <org.eventb.core.invariant name="_kxu-IBZKEeiVKKzr1gFDUC" org.eventb.core.label="inv4" org.eventb.core.predicate="sortie ∩ queue = ∅"/>
 <org.eventb.core.invariant name="_kxu-IBZKEeiVKKzr1gFDUD" org.eventb.core.label="inv5" org.eventb.core.predicate="∀p·(p ∈ sortie ⇒ valide(p) = oui)"/>
