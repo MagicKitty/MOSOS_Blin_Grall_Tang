@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1519137115406" org.eventb.texttools.text_representation="machine M0 sees C0&#10;&#10;variables queue sortie&#10;&#10;invariants&#10;  @inv1 queue ∈ ℙ(Personnes×Passeports)&#10;  @inv2 sortie ∈ ℙ(Personnes×Passeports)&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act1 queue ≔  Queue_init&#10;      @act3 sortie ≔  ∅&#10;  end&#10;&#10;  event passage&#10;    any pers pass&#10;    where&#10;      @grd1 pers ∈ Personnes&#10;      @grd2 pass ∈ Passeports&#10;      @grd3 valide(pass ↦ pers) = oui&#10;    then&#10;      @act2 queue ≔ queue∖{pers ↦ pass}&#10;      @act1 sortie ≔ sortie ∪ {pers ↦ pass}&#10;  end&#10;&#10;end&#10;" version="5">
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1520268048351" org.eventb.texttools.text_representation="machine M0 sees C0&#10;&#10;variables queue sortie&#10;&#10;invariants&#10;  @inv1 queue ∈ ℙ(Queue_init)&#10;  @inv2 sortie ∈ ℙ(Queue_init)&#10;  @inv3 sortie ∪ queue = Queue_init&#10;  @inv4 sortie ∩ queue = ∅&#10;  @inv5 ∀p·(p ∈ sortie ⇒ valide(p) = oui)&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act1 queue ≔  Queue_init&#10;      @act2 sortie ≔  ∅&#10;  end&#10;&#10;  event passage&#10;    any p&#10;    where&#10;      @grd1 queue ≠  ∅&#10;      @grd2 p ∈ queue&#10;      @grd3 valide(p) = oui&#10;    then&#10;      @act1 queue ≔ queue∖{p}&#10;      @act2 sortie ≔ sortie ∪ {p}&#10;  end&#10;end&#10;" version="5">
 <org.eventb.core.seesContext name="(" org.eventb.core.target="C0"/>
 <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="(" org.eventb.core.assignment="queue ≔  Queue_init" org.eventb.core.label="act1"/>
@@ -9,10 +9,11 @@
 <org.eventb.core.invariant name="-" org.eventb.core.label="inv1" org.eventb.core.predicate="queue ∈ ℙ(Queue_init)"/>
 <org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="passage">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ queue"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="queue ≠  ∅"/>
 <org.eventb.core.action name="_9lYTYBZJEeiVKKzr1gFDUA" org.eventb.core.assignment="queue ≔ queue∖{p}" org.eventb.core.label="act1"/>
-<org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="valide(p) = oui"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="p ∈ queue"/>
 <org.eventb.core.action name="_I2_9MBV8EeijPo80ZR4tpQ" org.eventb.core.assignment="sortie ≔ sortie ∪ {p}" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="_8VJjsCCTEeiK-4ay-k1Rtg" org.eventb.core.label="grd3" org.eventb.core.predicate="valide(p) = oui"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="/" org.eventb.core.identifier="sortie"/>
 <org.eventb.core.invariant name="_kxu-IBZKEeiVKKzr1gFDUA" org.eventb.core.label="inv2" org.eventb.core.predicate="sortie ∈ ℙ(Queue_init)"/>
