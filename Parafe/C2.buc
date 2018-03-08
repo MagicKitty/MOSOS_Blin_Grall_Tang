@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" org.eventb.texttools.text_lastmodified="1520500310854" org.eventb.texttools.text_representation="context C2 extends C1&#10;&#10;sets OF // {ouvert, ferme} désigne l'état d'une porte&#10;&#9; Etats2 //&#10;&#10;constants&#10;&#9;ouvert ferme&#10;&#9;valide_pass // fonction décidant de la validité d'un passeport seul.&#10;&#10;axioms&#10;&#9;@axm1 partition(OF, {ouvert}, {ferme})&#10;&#9;@axm2 valide_pass ∈ Passeports → Validite&#10;end&#10;" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="C1"/>
+<org.eventb.core.carrierSet name="_wHfcACKsEeiVf5B8Fr6DZA" org.eventb.core.comment="{ouvert, ferme} désigne l'état d'une porte" org.eventb.core.identifier="OF"/>
+<org.eventb.core.axiom name="_zh1b8CKsEeiVf5B8Fr6DZA" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(OF, {ouvert}, {ferme})"/>
+<org.eventb.core.constant name="_3IkSECKsEeiVf5B8Fr6DZA" org.eventb.core.identifier="ouvert"/>
+<org.eventb.core.constant name="_3IkSESKsEeiVf5B8Fr6DZA" org.eventb.core.identifier="ferme"/>
+<org.eventb.core.constant name="_SaeHkCKuEeiVf5B8Fr6DZA" org.eventb.core.comment="fonction décidant de la validité d'un passeport seul." org.eventb.core.identifier="valide_pass"/>
+<org.eventb.core.axiom name="_W-idwCKwEeiVf5B8Fr6DZA" org.eventb.core.label="axm2" org.eventb.core.predicate="valide_pass ∈ Passeports → Validite"/>
+<org.eventb.core.carrierSet name="_vJpW4CKwEeiVf5B8Fr6DZA" org.eventb.core.identifier="Etats2"/>
+</org.eventb.core.contextFile>
