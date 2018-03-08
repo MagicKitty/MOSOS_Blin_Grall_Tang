@@ -2,17 +2,17 @@
 <org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1520266411714" org.eventb.texttools.text_representation="context C0&#10;&#10;sets Personnes // Ensemble des personnes dans la file&#10;     Passeports // Ensemble des passeports possédées par les personnes&#10;     Validite // {oui, non} oui pour un passeport valide, non pour un passeport non valide&#10;     OF // {ouvert, ferme} désigne l'état d'une porte&#10;&#10;&#10;constants valide oui non ouvert ferme Queue_init&#10;&#10;axioms&#10;  @axm1 Queue_init ∈ ℙ(Personnes × Passeports)&#10;  @axm2 finite(Queue_init)&#10;  @axm3 valide ∈ ((Personnes × Passeports) → Validite)&#10;  @axm4 partition(Validite, {oui}, {non})&#10;  @axm5 partition(OF, {ouvert}, {ferme})&#10;end&#10;" version="3">
 <org.eventb.core.carrierSet name="(" org.eventb.core.comment="Ensemble des personnes dans la file" org.eventb.core.identifier="Personnes"/>
 <org.eventb.core.carrierSet name="," org.eventb.core.comment="Ensemble des passeports possédées par les personnes" org.eventb.core.identifier="Passeports"/>
-<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="-" org.eventb.core.identifier="valide"/>
-<org.eventb.core.axiom name="." org.eventb.core.label="axm1" org.eventb.core.predicate="Queue_init ∈ ℙ(Personnes × Passeports)"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="-" org.eventb.core.comment="fonction décidant de la validité d'un couple personne x passeport" org.eventb.core.identifier="valide"/>
+<org.eventb.core.axiom name="." org.eventb.core.comment="On suppose que chaque personne possède un passeport" org.eventb.core.label="axm1" org.eventb.core.predicate="Queue_init ∈ ℙ(Personnes × Passeports)"/>
 <org.eventb.core.carrierSet name="1" org.eventb.core.comment="{oui, non} oui pour un passeport valide, non pour un passeport non valide" org.eventb.core.identifier="Validite"/>
 <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="2" org.eventb.core.identifier="oui"/>
 <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="3" org.eventb.core.identifier="non"/>
-<org.eventb.core.axiom name="4" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(Queue_init)"/>
+<org.eventb.core.axiom name="4" org.eventb.core.comment="On suppose que la queue est finie pour que les preuves soient plus faciles sans que cela ne change la validité des machines." org.eventb.core.label="axm2" org.eventb.core.predicate="finite(Queue_init)"/>
 <org.eventb.core.carrierSet name="5" org.eventb.core.comment="{ouvert, ferme} désigne l'état d'une porte" org.eventb.core.identifier="OF"/>
 <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="6" org.eventb.core.identifier="ouvert"/>
 <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="7" org.eventb.core.identifier="ferme"/>
 <org.eventb.core.axiom name="8" org.eventb.core.label="axm3" org.eventb.core.predicate="valide ∈ ((Personnes × Passeports) → Validite)"/>
 <org.eventb.core.axiom name="=" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(Validite, {oui}, {non})"/>
-<org.eventb.core.constant name="_sA6XEBZJEeiVKKzr1gFDUA" org.eventb.core.identifier="Queue_init"/>
+<org.eventb.core.constant name="_sA6XEBZJEeiVKKzr1gFDUA" org.eventb.core.comment="Ensemble des personnes initialement dans la file" org.eventb.core.identifier="Queue_init"/>
 <org.eventb.core.axiom name="_hp8CICCPEeiK-4ay-k1Rtg" org.eventb.core.label="axm5" org.eventb.core.predicate="partition(OF, {ouvert}, {ferme})"/>
 </org.eventb.core.contextFile>
