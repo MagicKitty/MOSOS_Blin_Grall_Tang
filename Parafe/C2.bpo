@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="7">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poFile org.eventb.core.poStamp="12">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="12">
 <org.eventb.core.poIdentifier name="Passeports" org.eventb.core.type="ℙ(Passeports)"/>
 <org.eventb.core.poIdentifier name="Personnes" org.eventb.core.type="ℙ(Personnes)"/>
 <org.eventb.core.poIdentifier name="Validite" org.eventb.core.type="ℙ(Validite)"/>
@@ -12,6 +12,7 @@
 <org.eventb.core.poPredicate name="Queue_iniv" org.eventb.core.predicate="finite(Queue_init)" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#4"/>
 <org.eventb.core.poPredicate name="Queue_iniw" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#8"/>
 <org.eventb.core.poPredicate name="Queue_inix" org.eventb.core.predicate="partition(Validite,{oui},{non})" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#="/>
+<org.eventb.core.poPredicate name="Queue_iniy" org.eventb.core.predicate="∀pers⦂Personnes·∀pass1⦂Passeports·∀pass2⦂Passeports·pers∈Personnes∧pass1∈Passeports∧pass2∈Passeports∧pass1≠pass2∧pers ↦ pass1∈Queue_init⇒pers ↦ pass2∉Queue_init" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#_pTsQUCLVEeiVf5B8Fr6DZA"/>
 <org.eventb.core.poIdentifier name="Etats" org.eventb.core.type="ℙ(Etats)"/>
 <org.eventb.core.poIdentifier name="entree_sas" org.eventb.core.type="Etats"/>
 <org.eventb.core.poIdentifier name="sortie_sas" org.eventb.core.type="Etats"/>
@@ -30,8 +31,8 @@
 <org.eventb.core.poIdentifier name="porte2_ouverte" org.eventb.core.type="Etats2"/>
 <org.eventb.core.poIdentifier name="refus" org.eventb.core.type="Etats2"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C2.bpo|org.eventb.core.poFile#C2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C2.bpo|org.eventb.core.poFile#C2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="12">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})" org.eventb.core.source="/Parafe/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#_zh1b8CKsEeiVf5B8Fr6DZA"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(Etats2,{initial},{porte1_ouverte},{porte1_fermee},{refus},{porte2_ouverte})" org.eventb.core.source="/Parafe/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#_zh1b8CKsEeiVf5B8Fr6DZH"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(Etats2,{initial},{porte1_ouverte},{porte1_fermee},{refus},{porte2_ouverte})" org.eventb.core.source="/Parafe/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#_H5UZACLaEeiVf5B8Fr6DZA"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
