@@ -143,29 +143,26 @@
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="passage/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="OF,Passeports,Personnes,Validite">
+<org.eventb.core.prProof name="passage/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="Passeports,Personnes,Validite">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Validite,{oui},{non}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14,p15"/>
 <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p14,p15"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(OF,{ouvert},{ferme}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16,p17"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p16,p17"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p18">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p17">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p19"/>
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with sortie∪queue=Queue_init" org.eventb.core.prGoal="p18" org.eventb.core.prHyps="p10">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p20">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p18"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with sortie∪queue=Queue_init" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p10">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p19">
 <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with valide(p)=oui" org.eventb.core.prHyps="p3">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p14" org.eventb.core.prInfHyps="p21"/>
-<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p22"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p14" org.eventb.core.prInfHyps="p20"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p21"/>
 <org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p14,p15"/>
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p20" org.eventb.core.prHyps="p2,p13,p9,p5,p10,p12,p1,p6,p3,p4,p8,p14,p15,p16,p17,p21,p22">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="p2,p13,p9,p5,p10,p12,p1,p6,p3,p4,p8,p14,p15,p16,p20,p21">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -179,46 +176,40 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
 <org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
 <org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
-<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
 <org.eventb.core.prIdent name="queue" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="sortie" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="valide" org.eventb.core.type="ℙ(Personnes×Passeports×Validite)"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie⇒valide(p)=oui"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="sortie∪{p}∪(queue ∖ {p})=Queue_init"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="sortie∪{p}∪(queue ∖ {p})=Queue_init"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="finite(Queue_init)"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="valide(p)=oui"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(sortie∪{p})∪(queue ∖ {p})=Queue_init"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="p∈dom(valide)"/>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬ouvert=ferme"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="sortie∈ℙ(Queue_init)"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="p∈queue"/>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="sortie∪{p}∪(queue ∖ {p})=sortie∪queue"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="sortie∪{p}∪(queue ∖ {p})=sortie∪queue"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="queue≠(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="valide∈Personnes × Passeports ⇸ Validite"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="OF={ouvert,ferme}"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="queue∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬valide(p)=non"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬valide(p)=non"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="sortie∪queue=Queue_init"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="partition(Validite,{oui},{non})"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="sortie∩queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p14" org.eventb.core.predicate="Validite={oui,non}"/>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="Validite={valide(p),non}"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="Validite={valide(p),non}"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite"/>
 <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬oui=non"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="fermeture/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Etats,OF">
 <org.eventb.core.lang name="L"/>
@@ -441,28 +432,24 @@
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="passage/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="OF,Passeports,Personnes,Validite">
+<org.eventb.core.prProof name="passage/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="Passeports,Personnes,Validite">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Validite,{oui},{non}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14,p15"/>
 <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p14,p15"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(OF,{ouvert},{ferme}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16,p17"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p16,p17"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p19">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18"/>
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p17">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p20"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p18"/>
 <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with valide(p)=oui" org.eventb.core.prHyps="p3">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p14" org.eventb.core.prInfHyps="p21"/>
-<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p22"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p14" org.eventb.core.prInfHyps="p19"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p20"/>
 <org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p14,p15"/>
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="p2,p13,p9,p5,p10,p12,p1,p3,p4,p8,p14,p15,p16,p17,p18,p21,p22">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p2,p13,p9,p5,p10,p12,p1,p6,p3,p4,p8,p14,p15,p16,p19,p20">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -474,14 +461,9 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
 <org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
 <org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
-<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
 <org.eventb.core.prIdent name="queue" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="sortie" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
@@ -490,30 +472,28 @@
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="finite(Queue_init)"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(sortie∪{p})∩(queue ∖ {p})=(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="valide(p)=oui"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="p∈dom(valide)"/>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬ouvert=ferme"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="sortie∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="(sortie∪{p})∩queue⊆{p}"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="queue≠(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="p∈queue"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="(sortie∪{p})∩queue⊆{p}"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="queue≠(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="valide∈Personnes × Passeports ⇸ Validite"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="OF={ouvert,ferme}"/>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="queue∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬valide(p)=non"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬valide(p)=non"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="sortie∪queue=Queue_init"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="partition(Validite,{oui},{non})"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="sortie∩queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p14" org.eventb.core.predicate="Validite={oui,non}"/>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="Validite={valide(p),non}"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="Validite={valide(p),non}"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite"/>
 <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬oui=non"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="inv5/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="p" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Passeports,Personnes,Validite">
 <org.eventb.core.lang name="L"/>
@@ -683,34 +663,30 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="passage/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="p0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="OF,Passeports,Personnes,Validite">
+<org.eventb.core.prProof name="passage/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="p0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="Passeports,Personnes,Validite">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Validite,{oui},{non}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7"/>
 <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p6,p7"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(OF,{ouvert},{ferme}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8,p9"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p8,p9"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p10"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
 <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees p0)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
 <org.eventb.core.prIdent name="p0" org.eventb.core.type="Personnes×Passeports"/>
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p13">
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with valide(p)=oui" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p3">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p18">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p15"/>
-<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p16"/>
-<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p7" org.eventb.core.prInfHyps="p17"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p11">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with valide(p)=oui" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p3">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p13"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p14"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p7" org.eventb.core.prInfHyps="p15"/>
 <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p1,p6,p7"/>
-<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p18" org.eventb.core.prHyps="p3,p8,p9,p10,p13,p15,p16,p17">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p4,p3,p8,p11,p13,p14,p15">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -726,68 +702,57 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
-<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
 <org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
-<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
 <org.eventb.core.prIdent name="queue" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="sortie" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="valide" org.eventb.core.type="ℙ(Personnes×Passeports×Validite)"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie⇒valide(p)=oui"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="valide(p0)=valide(p)">
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="valide(p0)=valide(p)">
 <org.eventb.core.prIdent name="p0" org.eventb.core.type="Personnes×Passeports"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="valide(p)=oui"/>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬ouvert=ferme"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="queue≠(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="OF={ouvert,ferme}"/>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="p∈queue"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="queue≠(∅ ⦂ ℙ(Personnes×Passeports))"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)">
 <org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="valide(p0)=oui">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="valide(p0)=oui">
 <org.eventb.core.prIdent name="p0" org.eventb.core.type="Personnes×Passeports"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬valide(p)=non"/>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="∀p0⦂Personnes×Passeports·p0∈sortie⇒valide(p0)=valide(p)"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬valide(p)=non"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀p0⦂Personnes×Passeports·p0∈sortie⇒valide(p0)=valide(p)"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(Validite,{oui},{non})"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="Validite={oui,non}"/>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="p0∈sortie∪{p}⇒valide(p0)=oui">
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="p0∈sortie∪{p}⇒valide(p0)=oui">
 <org.eventb.core.prIdent name="p0" org.eventb.core.type="Personnes×Passeports"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p0⦂Personnes×Passeports·p0∈sortie∪{p}⇒valide(p0)=oui"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="Validite={valide(p),non}"/>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="p0∈sortie∪{p}">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="Validite={valide(p),non}"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="p0∈sortie∪{p}">
 <org.eventb.core.prIdent name="p0" org.eventb.core.type="Personnes×Passeports"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬oui=non"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
 <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="OF,Passeports,Personnes,Validite">
+<org.eventb.core.prProof name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="Passeports,Personnes,Validite">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Validite,{oui},{non}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5,p6"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p5,p6"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(OF,{ouvert},{ferme}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p5,p6,p7,p8">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p4,p5">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -795,43 +760,31 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
 <org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
 <org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
-<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="valide" org.eventb.core.type="ℙ(Personnes×Passeports×Validite)"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="OF={ouvert,ferme}"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(Queue_init)"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(Validite,{oui},{non})"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="Queue_init∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="Validite={oui,non}"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬ouvert=ferme"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="Validite={oui,non}"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬oui=non"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬oui=non"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="OF,Passeports,Personnes,Validite">
+<org.eventb.core.prProof name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="Passeports,Personnes,Validite">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Validite,{oui},{non}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5,p6"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p5,p6"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(OF,{ouvert},{ferme}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p5,p6,p7,p8">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p4,p5">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -839,51 +792,39 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
 <org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
 <org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
-<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="valide" org.eventb.core.type="ℙ(Personnes×Passeports×Validite)"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="OF={ouvert,ferme}"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(Queue_init)"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(Validite,{oui},{non})"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="Validite={oui,non}"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="Validite={oui,non}"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(Personnes×Passeports))∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬ouvert=ferme"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬oui=non"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬oui=non"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="passage/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="OF,Passeports,Personnes,Validite">
+<org.eventb.core.prProof name="passage/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="Passeports,Personnes,Validite">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Validite,{oui},{non}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14,p15"/>
 <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p14,p15"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(OF,{ouvert},{ferme}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16,p17"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p16,p17"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p19"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p17"/>
 <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with valide(p)=oui" org.eventb.core.prHyps="p3">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p14" org.eventb.core.prInfHyps="p20"/>
-<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p21"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p14" org.eventb.core.prInfHyps="p18"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p19"/>
 <org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p14,p15"/>
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p13,p9,p5,p10,p12,p1,p3,p4,p8,p14,p15,p16,p17,p18,p20,p21">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p13,p9,p5,p10,p12,p1,p6,p3,p4,p8,p14,p15,p16,p18,p19">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -895,14 +836,9 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
 <org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
 <org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
-<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
 <org.eventb.core.prIdent name="queue" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="sortie" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
@@ -910,50 +846,47 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie⇒valide(p)=oui"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="finite(Queue_init)"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="valide(p)=oui"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="p∈dom(valide)"/>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬ouvert=ferme"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="sortie∈ℙ(Queue_init)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="p∈queue"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="queue ∖ {p}∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="queue≠(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="queue≠(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="valide∈Personnes × Passeports ⇸ Validite"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="OF={ouvert,ferme}"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="queue∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬valide(p)=non"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬valide(p)=non"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="sortie∪queue=Queue_init"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="partition(Validite,{oui},{non})"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="sortie∩queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p14" org.eventb.core.predicate="Validite={oui,non}"/>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="Validite={valide(p),non}"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="Validite={valide(p),non}"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite"/>
 <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬oui=non"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="passage/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="OF,Passeports,Personnes,Validite">
+<org.eventb.core.prProof name="passage/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="Passeports,Personnes,Validite">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Validite,{oui},{non}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14,p15"/>
 <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p14,p15"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(OF,{ouvert},{ferme}))" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16,p17"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p16,p17"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p18"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with valide(p)=oui" org.eventb.core.prHyps="p3">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with valide(p)=oui" org.eventb.core.prHyps="p3">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p14" org.eventb.core.prInfHyps="p19"/>
-<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p20"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p14" org.eventb.core.prInfHyps="p18"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p19"/>
 <org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p14,p15"/>
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p13,p9,p5,p10,p12,p1,p6,p3,p4,p8,p14,p15,p16,p17,p19,p20">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p13,p9,p5,p10,p12,p1,p6,p3,p4,p8,p14,p15,p16,p18,p19">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -961,16 +894,13 @@
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
 <org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
 <org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
-<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
 <org.eventb.core.prIdent name="queue" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="sortie" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
@@ -978,28 +908,28 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie⇒valide(p)=oui"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="finite(Queue_init)"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="valide(p)=oui"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="p∈dom(valide)"/>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬ouvert=ferme"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="sortie∈ℙ(Queue_init)"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="p∈queue"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="queue≠(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="valide∈Personnes × Passeports ⇸ Validite"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="OF={ouvert,ferme}"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="queue∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬valide(p)=non"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬valide(p)=non"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="sortie∪queue=Queue_init"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="partition(Validite,{oui},{non})"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="sortie∩queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
 <org.eventb.core.prPred name="p14" org.eventb.core.predicate="Validite={oui,non}"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="sortie∪{p}∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="Validite={valide(p),non}"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="Validite={valide(p),non}"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite"/>
 <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬oui=non"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="passage/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Passeports,Personnes,Validite">
 <org.eventb.core.lang name="L"/>
