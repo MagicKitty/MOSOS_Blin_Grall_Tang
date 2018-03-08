@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1520541266034" org.eventb.texttools.text_representation="machine M2 refines M1  sees C2&#10;&#10;variables etat sas sortie queue_sas queue_sas1&#10;          queue_sas2&#10;          /* queues pour rentrer dans le sas&#10;             queue_sas1 : queue en dehors du sas&#10;             queue_sas2 queue dans le sas porte ouverte */&#10;          sortie1&#10;          sortie2&#10;          /* sortie1 : personnes dans le sas porte2 ouverte&#10;             sortie2 : personnes en dehors du sas. */&#10;          etat2 // état de l'automate&#10;          porte1 // état de la porte d'entrée du sas&#10;          porte2 // état de la porte de sortie du sas&#10;          passeport_courant // passeport lu par le lecteur&#10;&#10;&#10;invariants&#10;  @inv1 etat ∈ Etats&#10;  @inv2 sas ∈ ℙ(Queue_init)&#10;  @inv3 sortie ∈ ℙ(Queue_init)&#10;  @inv4 queue_sas ∈ ℙ(Queue_init)&#10;  @inv5 sortie1 ∈ ℙ(Queue_init)&#10;  @inv6 sortie2 ∈ ℙ(Queue_init)&#10;  @inv7 queue_sas1 ∈ ℙ(Queue_init)&#10;  @inv8 queue_sas2 ∈ ℙ(Queue_init)&#10;  @inv9 etat2 ∈ Etats2&#10;  @inv10 porte1 ∈ OF&#10;  @inv11 porte2 ∈ OF&#10;  @inv12 passeport_courant ∈ Passeports&#10;  @inv13 partition(queue_sas, queue_sas1, queue_sas2)&#10;  @inv14 partition(sortie, sortie1, sortie2)&#10;  @inv15 porte1 = ferme ⇒  queue_sas2 = ∅&#10;  @inv16 porte2 = ferme ⇒  sortie1 = ∅&#10;  @inv17 etat2 ∈ {refus, porte1_ouverte} ⇔ porte1 = ouvert&#10;  @inv18 etat2 ∈ {porte2_ouverte} ⇔ porte2 = ouvert&#10;  @inv19 etat2 ∈ {initial, porte2_ouverte, refus} ⇔ etat = lecture_pass&#10;  @inv20 etat2 ∈ {porte1_ouverte} ⇔ etat = entree_sas&#10;  @inv21 etat2 = porte1_fermee ⇔ etat = sortie_sas&#10;  @inv22 sas ≠ ∅ ⇒ (queue_sas2 = ∅ ∧ sortie1 = ∅)&#10;  @inv23 queue_sas2 ≠ ∅ ∨ sortie1 ≠ ∅ ⇒ sas = ∅&#10;  @inv24 etat2 = porte1_ouverte ⇒ valide_pass(passeport_courant) = oui&#10;  //@inv24 sas ∩ queue_sas = ∅&#10;     /*@inv24 sas ∪  queue_sas = queue&#10;     @inv25 sortie ∩ queue =  ∅&#10;     @inv26 sortie ∩  sas = ∅&#10;     @inv27 sortie ∪ queue = Queue_init&#10;     @inv28 etat = entree_sas ⇒ sas=∅&#10;     @inv29 etat = sortie_sas ⇒ card(sas)=1 */&#10;&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act1 etat ≔ lecture_pass&#10;      @act3 queue_sas ≔ Queue_init&#10;      @act4 sas ≔  ∅&#10;      @act5 sortie ≔ ∅&#10;      @act6 etat2 ≔ initial&#10;      @act7 porte1 ≔ ferme&#10;      @act8 porte2 ≔ ferme&#10;      @act9 passeport_courant :∈ Passeports&#10;      @act10 queue_sas1 ≔  Queue_init&#10;      @act11 queue_sas2 ≔ ∅&#10;      @act12 sortie1 ≔ ∅&#10;      @act13 sortie2 ≔ ∅&#10;  end&#10;&#10;  event ouverture_porte1 refines lecture_passeport&#10;    any pass&#10;    where&#10;      @grd1 etat2 = initial&#10;      @grd2 pass ∈ Passeports&#10;      @grd3 valide_pass(pass) = oui&#10;    then&#10;      @act1 porte1 ≔ ouvert&#10;      @act2 passeport_courant ≔ pass&#10;      @act3 etat2 ≔  porte1_ouverte&#10;      @act4 etat ≔  entree_sas&#10;  end&#10;&#10;  event entrer_sas&#10;    any q1 q2&#10;    where&#10;      @grd1 etat2 = porte1_ouverte&#10;      @grd2 q1 ⊆ queue_sas&#10;      @grd3 q2 ⊆ queue_sas&#10;      @grd4 q1 ∩ q2  = ∅&#10;      @grd5 q1 ∪ q2 = queue_sas&#10;    then&#10;      @act1 queue_sas1 ≔ q1&#10;      @act2 queue_sas2 ≔ q2&#10;  end&#10;&#10;  event fermeture_porte1 refines entrer&#10;    where&#10;      @grd1 etat2 = porte1_ouverte&#10;      @grd2 card(queue_sas2) = 1&#10;    with&#10;      @p queue_sas2 = {p}&#10;    then&#10;      @act1 porte1 ≔ ferme&#10;      @act2 etat2 ≔  porte1_fermee&#10;      @act3 sas ≔ sas ∪ queue_sas2&#10;      @act4 queue_sas2 ≔  ∅&#10;      @act5 etat ≔ sortie_sas&#10;      @act6 queue_sas ≔  queue_sas1&#10;  end&#10;&#10;  event ouverture_porte2 refines sortir&#10;    where&#10;      @grd1 etat2 = porte1_fermee&#10;      @grd2 ∃pers·(pers↦passeport_courant∈sas ∧ valide(pers↦passeport_courant) = oui)&#10;    then&#10;      @act1 etat2 ≔ porte2_ouverte&#10;      @act2 etat ≔  lecture_pass&#10;      @act3 sortie1 ≔ sas&#10;      @act4 sortie ≔ sortie ∪ sas&#10;      @act5 sas ≔ ∅&#10;      @act6 porte2 ≔ ouvert&#10;  end&#10;&#10;  event sortir_sas&#10;    any s1 s2&#10;    where&#10;      @grd1 etat2 = porte2_ouverte&#10;      @grd2 s1 ⊆ sortie&#10;      @grd3 s2 ⊆ sortie&#10;      @grd4 s1 ∩ s2  = ∅&#10;      @grd5 s1 ∪ s2 = sortie&#10;    then&#10;      @act1 sortie1 ≔ s1&#10;      @act2 sortie2 ≔ s2&#10;  end&#10;&#10;  event fermeture_porte2&#10;    where&#10;      @grd1 etat2 = porte2_ouverte&#10;      @grd2 sortie1 = ∅&#10;    then&#10;      @act1 etat2 ≔ initial&#10;      @act2 porte2 ≔ ferme&#10;  end&#10;&#10;  event refus2 refines refus&#10;    any pers pass&#10;    where&#10;      @grd1 etat2 = porte1_fermee&#10;      @grd2 pers ↦ pass ∈ sas&#10;      @grd3 pass ≠  passeport_courant ∨ valide(pers↦pass) = non&#10;    then&#10;      @act1 etat2 ≔ refus&#10;      @act2 etat ≔ lecture_pass&#10;      @act3 porte1 ≔ ouvert&#10;      @act4 sas ≔ ∅&#10;      @act5 queue_sas ≔ queue_sas ∪ sas&#10;      @act6 queue_sas2 ≔  sas&#10;  end&#10;&#10;  event retour_queue&#10;    any q1 q2&#10;    where&#10;      @grd1 etat2 = refus&#10;      @grd2 q1 ⊆ queue_sas&#10;      @grd3 q2 ⊆ queue_sas&#10;      @grd4 q1 ∩ q2  = ∅&#10;      @grd5 q1 ∪ q2 = queue_sas&#10;    then&#10;      @act1 queue_sas1 ≔ q1&#10;      @act2 queue_sas2 ≔ q2&#10;  end&#10;&#10;  event reinitialisation&#10;    where&#10;      @grd1 etat2 = refus&#10;      @grd2 queue_sas2 = ∅&#10;    then&#10;      @act1 porte1 ≔ ferme&#10;      @act2 etat2 ≔  initial&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.refinesMachine name="(" org.eventb.core.target="M1"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="C2"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_N3TA4CK6EeiVf5B8Fr6DZA" org.eventb.core.assignment="etat ≔ lecture_pass" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_N3TA4SK6EeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas ≔ Queue_init" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_N3TA4iK6EeiVf5B8Fr6DZA" org.eventb.core.assignment="sas ≔  ∅" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_N3TA4yK6EeiVf5B8Fr6DZA" org.eventb.core.assignment="sortie ≔ ∅" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_N3Tn8CK6EeiVf5B8Fr6DZA" org.eventb.core.assignment="etat2 ≔ initial" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="_KVOe8CLTEeiVf5B8Fr6DZA" org.eventb.core.assignment="porte1 ≔ ferme" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="_KVOe8SLTEeiVf5B8Fr6DZA" org.eventb.core.assignment="porte2 ≔ ferme" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="_KVPGASLTEeiVf5B8Fr6DZA" org.eventb.core.assignment="passeport_courant :∈ Passeports" org.eventb.core.label="act9"/>
+<org.eventb.core.action name="_vyDEwCLeEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas1 ≔  Queue_init" org.eventb.core.label="act10"/>
+<org.eventb.core.action name="_vyDEwSLeEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas2 ≔ ∅" org.eventb.core.label="act11"/>
+<org.eventb.core.action name="_vyDEwiLeEeiVf5B8Fr6DZA" org.eventb.core.assignment="sortie1 ≔ ∅" org.eventb.core.label="act12"/>
+<org.eventb.core.action name="_vyDr0CLeEeiVf5B8Fr6DZA" org.eventb.core.assignment="sortie2 ≔ ∅" org.eventb.core.label="act13"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="*" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ouverture_porte1">
+<org.eventb.core.refinesEvent name="_VYK04CMIEeixm4QQUHx-Dg" org.eventb.core.target="lecture_passeport"/>
+<org.eventb.core.parameter name="_KVOe8iLTEeiVf5B8Fr6DZA" org.eventb.core.identifier="pass"/>
+<org.eventb.core.guard name="_KVPGACLTEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat2 = initial"/>
+<org.eventb.core.guard name="_SFf9UCLTEeiVf5B8Fr6DZA" org.eventb.core.label="grd2" org.eventb.core.predicate="pass ∈ Passeports"/>
+<org.eventb.core.guard name="_SFf9USLTEeiVf5B8Fr6DZA" org.eventb.core.label="grd3" org.eventb.core.predicate="valide_pass(pass) = oui"/>
+<org.eventb.core.action name="_K9OAISLgEeiVf5B8Fr6DZA" org.eventb.core.assignment="porte1 ≔ ouvert" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_K9OAIiLgEeiVf5B8Fr6DZA" org.eventb.core.assignment="passeport_courant ≔ pass" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_n0bmkiLhEeiVf5B8Fr6DZA" org.eventb.core.assignment="etat2 ≔  porte1_ouverte" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_y6uowCLlEeiVf5B8Fr6DZA" org.eventb.core.assignment="etat ≔  entree_sas" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="entrer_sas">
+<org.eventb.core.parameter name="_K9NZECLgEeiVf5B8Fr6DZA" org.eventb.core.identifier="q1"/>
+<org.eventb.core.guard name="_K9NZESLgEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat2 = porte1_ouverte"/>
+<org.eventb.core.guard name="_K9OAICLgEeiVf5B8Fr6DZA" org.eventb.core.label="grd2" org.eventb.core.predicate="q1 ⊆ queue_sas"/>
+<org.eventb.core.parameter name="_UZ1rkCLgEeiVf5B8Fr6DZA" org.eventb.core.identifier="q2"/>
+<org.eventb.core.guard name="_UZ1rkSLgEeiVf5B8Fr6DZA" org.eventb.core.label="grd3" org.eventb.core.predicate="q2 ⊆ queue_sas"/>
+<org.eventb.core.guard name="_UZ1rkiLgEeiVf5B8Fr6DZA" org.eventb.core.label="grd4" org.eventb.core.predicate="q1 ∩ q2  = ∅"/>
+<org.eventb.core.guard name="_AG0o4CLhEeiVf5B8Fr6DZA" org.eventb.core.label="grd5" org.eventb.core.predicate="q1 ∪ q2 = queue_sas"/>
+<org.eventb.core.action name="_y6uowSLlEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas1 ≔ q1" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_y6vP0CLlEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas2 ≔ q2" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="," org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="fermeture_porte1">
+<org.eventb.core.refinesEvent name="_AG0o4SLhEeiVf5B8Fr6DZA" org.eventb.core.target="entrer"/>
+<org.eventb.core.guard name="_n0bmkCLhEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat2 = porte1_ouverte"/>
+<org.eventb.core.guard name="_n0bmkSLhEeiVf5B8Fr6DZA" org.eventb.core.label="grd2" org.eventb.core.predicate="card(queue_sas2) = 1"/>
+<org.eventb.core.witness name="_C3-FYCLiEeiVf5B8Fr6DZA" org.eventb.core.label="p" org.eventb.core.predicate="queue_sas2 = {p}"/>
+<org.eventb.core.action name="_jSMGQCLoEeiVf5B8Fr6DZA" org.eventb.core.assignment="porte1 ≔ ferme" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_jSMGQSLoEeiVf5B8Fr6DZA" org.eventb.core.assignment="etat2 ≔  porte1_fermee" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_x4C8YCLoEeiVf5B8Fr6DZA" org.eventb.core.assignment="sas ≔ sas ∪ queue_sas2" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_dsewECLqEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas2 ≔  ∅" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_dsfXISLqEeiVf5B8Fr6DZA" org.eventb.core.assignment="etat ≔ sortie_sas" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_vy0DUCLqEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas ≔  queue_sas1" org.eventb.core.label="act6"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_-I-G0CK5EeiVf5B8Fr6DZA" org.eventb.core.identifier="etat"/>
+<org.eventb.core.variable name="_-I-G0SK5EeiVf5B8Fr6DZA" org.eventb.core.identifier="sas"/>
+<org.eventb.core.variable name="_-I-G0iK5EeiVf5B8Fr6DZA" org.eventb.core.identifier="sortie"/>
+<org.eventb.core.variable name="_-I-G0yK5EeiVf5B8Fr6DZA" org.eventb.core.identifier="queue_sas"/>
+<org.eventb.core.variable name="_-I-G1CK5EeiVf5B8Fr6DZA" org.eventb.core.identifier="queue_sas1"/>
+<org.eventb.core.invariant name="_-I-t4SK5EeiVf5B8Fr6DZA" org.eventb.core.label="inv1" org.eventb.core.predicate="etat ∈ Etats"/>
+<org.eventb.core.invariant name="_-I-t4iK5EeiVf5B8Fr6DZA" org.eventb.core.label="inv2" org.eventb.core.predicate="sas ∈ ℙ(Queue_init)"/>
+<org.eventb.core.invariant name="_-I-t4yK5EeiVf5B8Fr6DZA" org.eventb.core.label="inv3" org.eventb.core.predicate="sortie ∈ ℙ(Queue_init)"/>
+<org.eventb.core.invariant name="_-I-t5CK5EeiVf5B8Fr6DZA" org.eventb.core.label="inv4" org.eventb.core.predicate="queue_sas ∈ ℙ(Queue_init)"/>
+<org.eventb.core.invariant name="_-I-t5SK5EeiVf5B8Fr6DZA" org.eventb.core.label="inv5" org.eventb.core.predicate="sortie1 ∈ ℙ(Queue_init)"/>
+<org.eventb.core.invariant name="_-I_U8CK5EeiVf5B8Fr6DZA" org.eventb.core.label="inv6" org.eventb.core.predicate="sortie2 ∈ ℙ(Queue_init)"/>
+<org.eventb.core.event name="_KVQ7MiLTEeiVf5B8Fr6DZA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ouverture_porte2">
+<org.eventb.core.refinesEvent name="_dsfXICLqEeiVf5B8Fr6DZA" org.eventb.core.target="sortir"/>
+<org.eventb.core.guard name="_BXd3wCLpEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat2 = porte1_fermee"/>
+<org.eventb.core.guard name="_BXd3wSLpEeiVf5B8Fr6DZA" org.eventb.core.label="grd2" org.eventb.core.predicate="∃pers·(pers↦passeport_courant∈sas ∧ valide(pers↦passeport_courant) = oui)"/>
+<org.eventb.core.action name="_vy0qYCLqEeiVf5B8Fr6DZA" org.eventb.core.assignment="etat2 ≔ porte2_ouverte" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_vy0qYSLqEeiVf5B8Fr6DZA" org.eventb.core.assignment="etat ≔  lecture_pass" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_7MgfcCLqEeiVf5B8Fr6DZA" org.eventb.core.assignment="sortie1 ≔ sas" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_9ZQq4CLqEeiVf5B8Fr6DZA" org.eventb.core.assignment="sortie ≔ sortie ∪ sas" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_CIxG8CLrEeiVf5B8Fr6DZA" org.eventb.core.assignment="sas ≔ ∅" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_RiUD1CLrEeiVf5B8Fr6DZA" org.eventb.core.assignment="porte2 ≔ ouvert" org.eventb.core.label="act6"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_8u1TACLYEeiVf5B8Fr6DZA" org.eventb.core.comment="queues pour rentrer dans le sas&#10;             queue_sas1 : queue en dehors du sas&#10;             queue_sas2 queue dans le sas porte ouverte " org.eventb.core.identifier="queue_sas2"/>
+<org.eventb.core.invariant name="_8u1TASLYEeiVf5B8Fr6DZA" org.eventb.core.label="inv7" org.eventb.core.predicate="queue_sas1 ∈ ℙ(Queue_init)"/>
+<org.eventb.core.variable name="_VLufsCLZEeiVf5B8Fr6DZA" org.eventb.core.identifier="sortie1"/>
+<org.eventb.core.variable name="_VLvGwCLZEeiVf5B8Fr6DZA" org.eventb.core.comment="sortie1 : personnes dans le sas porte2 ouverte&#10;             sortie2 : personnes en dehors du sas. " org.eventb.core.identifier="sortie2"/>
+<org.eventb.core.variable name="_VLvGwSLZEeiVf5B8Fr6DZA" org.eventb.core.comment="état de l'automate" org.eventb.core.identifier="etat2"/>
+<org.eventb.core.invariant name="_hs4dsCLaEeiVf5B8Fr6DZA" org.eventb.core.label="inv8" org.eventb.core.predicate="queue_sas2 ∈ ℙ(Queue_init)"/>
+<org.eventb.core.invariant name="_hs4dsSLaEeiVf5B8Fr6DZA" org.eventb.core.label="inv9" org.eventb.core.predicate="etat2 ∈ Etats2"/>
+<org.eventb.core.event name="_7FBDQCLdEeiVf5B8Fr6DZA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="sortir_sas">
+<org.eventb.core.parameter name="_RiTcwCLrEeiVf5B8Fr6DZA" org.eventb.core.identifier="s1"/>
+<org.eventb.core.parameter name="_RiTcwSLrEeiVf5B8Fr6DZA" org.eventb.core.identifier="s2"/>
+<org.eventb.core.guard name="_RiTcwiLrEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat2 = porte2_ouverte"/>
+<org.eventb.core.guard name="_RiUD0CLrEeiVf5B8Fr6DZA" org.eventb.core.label="grd2" org.eventb.core.predicate="s1 ⊆ sortie"/>
+<org.eventb.core.guard name="_RiUD0SLrEeiVf5B8Fr6DZA" org.eventb.core.label="grd3" org.eventb.core.predicate="s2 ⊆ sortie"/>
+<org.eventb.core.guard name="_RiUD0iLrEeiVf5B8Fr6DZA" org.eventb.core.label="grd4" org.eventb.core.predicate="s1 ∩ s2  = ∅"/>
+<org.eventb.core.guard name="_RiUD0yLrEeiVf5B8Fr6DZA" org.eventb.core.label="grd5" org.eventb.core.predicate="s1 ∪ s2 = sortie"/>
+<org.eventb.core.action name="_RiUD1SLrEeiVf5B8Fr6DZA" org.eventb.core.assignment="sortie1 ≔ s1" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_4KMTECLsEeiVf5B8Fr6DZA" org.eventb.core.assignment="sortie2 ≔ s2" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_7FBDQSLdEeiVf5B8Fr6DZA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="fermeture_porte2">
+<org.eventb.core.guard name="_s6eHwCLrEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat2 = porte2_ouverte"/>
+<org.eventb.core.guard name="_kVqYoCLsEeiVf5B8Fr6DZA" org.eventb.core.label="grd2" org.eventb.core.predicate="sortie1 = ∅"/>
+<org.eventb.core.action name="_6kl48CLsEeiVf5B8Fr6DZA" org.eventb.core.assignment="etat2 ≔ initial" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_fF9HoCLuEeiVf5B8Fr6DZA" org.eventb.core.assignment="porte2 ≔ ferme" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_7FBqUSLdEeiVf5B8Fr6DZA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="refus2">
+<org.eventb.core.refinesEvent name="_1guy8CLrEeiVf5B8Fr6DZA" org.eventb.core.target="refus"/>
+<org.eventb.core.guard name="_Tb37kCLtEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat2 = porte1_fermee"/>
+<org.eventb.core.guard name="_Tb37kSLtEeiVf5B8Fr6DZA" org.eventb.core.label="grd2" org.eventb.core.predicate="pers ↦ pass ∈ sas"/>
+<org.eventb.core.action name="_fF9HoSLuEeiVf5B8Fr6DZA" org.eventb.core.assignment="etat2 ≔ refus" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_fF9HoiLuEeiVf5B8Fr6DZA" org.eventb.core.assignment="etat ≔ lecture_pass" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_fF9HoyLuEeiVf5B8Fr6DZA" org.eventb.core.assignment="porte1 ≔ ouvert" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_fF9HpCLuEeiVf5B8Fr6DZA" org.eventb.core.assignment="sas ≔ ∅" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_j4zLkCLuEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas ≔ queue_sas ∪ sas" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_nOmpwSLuEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas2 ≔  sas" org.eventb.core.label="act6"/>
+<org.eventb.core.parameter name="_nOmCsCLuEeiVf5B8Fr6DZA" org.eventb.core.identifier="pers"/>
+<org.eventb.core.parameter name="_nOmCsSLuEeiVf5B8Fr6DZA" org.eventb.core.identifier="pass"/>
+<org.eventb.core.guard name="_nOmCsiLuEeiVf5B8Fr6DZA" org.eventb.core.label="grd3" org.eventb.core.predicate="pass ≠  passeport_courant ∨ valide(pers↦pass) = non"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_7FBqUiLdEeiVf5B8Fr6DZA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="retour_queue">
+<org.eventb.core.guard name="_nOmCsyLuEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat2 = refus"/>
+<org.eventb.core.guard name="_nOmCtCLuEeiVf5B8Fr6DZA" org.eventb.core.label="grd2" org.eventb.core.predicate="q1 ⊆ queue_sas"/>
+<org.eventb.core.guard name="_nOmCtSLuEeiVf5B8Fr6DZA" org.eventb.core.label="grd3" org.eventb.core.predicate="q2 ⊆ queue_sas"/>
+<org.eventb.core.guard name="_nOmpwCLuEeiVf5B8Fr6DZA" org.eventb.core.label="grd4" org.eventb.core.predicate="q1 ∩ q2  = ∅"/>
+<org.eventb.core.action name="_nOmpwiLuEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas1 ≔ q1" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_3wAmkiLuEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas2 ≔ q2" org.eventb.core.label="act2"/>
+<org.eventb.core.parameter name="_C-0QQCMOEeixm4QQUHx-Dg" org.eventb.core.identifier="q1"/>
+<org.eventb.core.parameter name="_C-03UCMOEeixm4QQUHx-Dg" org.eventb.core.identifier="q2"/>
+<org.eventb.core.guard name="_3wAmkCLuEeiVf5B8Fr6DZA" org.eventb.core.label="grd5" org.eventb.core.predicate="q1 ∪ q2 = queue_sas"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_vyFhACLeEeiVf5B8Fr6DZA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="reinitialisation">
+<org.eventb.core.guard name="_3wAmkSLuEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat2 = refus"/>
+<org.eventb.core.action name="_3wAmkyLuEeiVf5B8Fr6DZA" org.eventb.core.assignment="porte1 ≔ ferme" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_CXr7oCMKEeixm4QQUHx-Dg" org.eventb.core.assignment="etat2 ≔  initial" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="_C-03USMOEeixm4QQUHx-Dg" org.eventb.core.label="grd2" org.eventb.core.predicate="queue_sas2 = ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="_IZWxsCLfEeiVf5B8Fr6DZA" org.eventb.core.label="inv10" org.eventb.core.predicate="porte1 ∈ OF"/>
+<org.eventb.core.invariant name="_IZWxsSLfEeiVf5B8Fr6DZA" org.eventb.core.label="inv11" org.eventb.core.predicate="porte2 ∈ OF"/>
+<org.eventb.core.invariant name="_IZXYwCLfEeiVf5B8Fr6DZA" org.eventb.core.label="inv12" org.eventb.core.predicate="passeport_courant ∈ Passeports"/>
+<org.eventb.core.invariant name="_IZXYwSLfEeiVf5B8Fr6DZA" org.eventb.core.label="inv13" org.eventb.core.predicate="partition(queue_sas, queue_sas1, queue_sas2)"/>
+<org.eventb.core.invariant name="_IZXYwiLfEeiVf5B8Fr6DZA" org.eventb.core.label="inv14" org.eventb.core.predicate="partition(sortie, sortie1, sortie2)"/>
+<org.eventb.core.invariant name="_IZXYwyLfEeiVf5B8Fr6DZA" org.eventb.core.label="inv15" org.eventb.core.predicate="porte1 = ferme ⇒  queue_sas2 = ∅"/>
+<org.eventb.core.variable name="_QlRtcCLjEeiVf5B8Fr6DZA" org.eventb.core.comment="état de la porte d'entrée du sas" org.eventb.core.identifier="porte1"/>
+<org.eventb.core.variable name="_QlRtcSLjEeiVf5B8Fr6DZA" org.eventb.core.comment="état de la porte de sortie du sas" org.eventb.core.identifier="porte2"/>
+<org.eventb.core.variable name="_WpZMACLjEeiVf5B8Fr6DZA" org.eventb.core.comment="passeport lu par le lecteur" org.eventb.core.identifier="passeport_courant"/>
+<org.eventb.core.invariant name="_kb-VoCLkEeiVf5B8Fr6DZA" org.eventb.core.label="inv16" org.eventb.core.predicate="porte2 = ferme ⇒  sortie1 = ∅"/>
+<org.eventb.core.invariant name="_ZmSTkCLmEeiVf5B8Fr6DZA" org.eventb.core.label="inv17" org.eventb.core.predicate="etat2 ∈ {refus, porte1_ouverte} ⇔ porte1 = ouvert"/>
+<org.eventb.core.invariant name="_206w8CLmEeiVf5B8Fr6DZA" org.eventb.core.label="inv18" org.eventb.core.predicate="etat2 ∈ {porte2_ouverte} ⇔ porte2 = ouvert"/>
+<org.eventb.core.invariant name="_s6f88CLrEeiVf5B8Fr6DZA" org.eventb.core.label="inv19" org.eventb.core.predicate="etat2 ∈ {initial, porte2_ouverte, refus} ⇔ etat = lecture_pass"/>
+<org.eventb.core.invariant name="_qLxosCLyEeiVf5B8Fr6DZA" org.eventb.core.label="inv20" org.eventb.core.predicate="etat2 ∈ {porte1_ouverte} ⇔ etat = entree_sas"/>
+<org.eventb.core.invariant name="_qLxosSLyEeiVf5B8Fr6DZA" org.eventb.core.label="inv21" org.eventb.core.predicate="etat2 = porte1_fermee ⇔ etat = sortie_sas"/>
+<org.eventb.core.invariant name="__0QQMCL2EeiVf5B8Fr6DZA" org.eventb.core.label="inv22" org.eventb.core.predicate="sas ≠ ∅ ⇒ (queue_sas2 = ∅ ∧ sortie1 = ∅)"/>
+<org.eventb.core.invariant name="_pyeLUCMHEeixm4QQUHx-Dg" org.eventb.core.label="inv23" org.eventb.core.predicate="queue_sas2 ≠ ∅ ∨ sortie1 ≠ ∅ ⇒ sas = ∅"/>
+<org.eventb.core.invariant name="_REGFsCMKEeixm4QQUHx-Dg" org.eventb.core.comment="@inv24 sas ∩ queue_sas = ∅&#10;@inv24 sas ∪  queue_sas = queue&#10;     @inv25 sortie ∩ queue =  ∅&#10;     @inv26 sortie ∩  sas = ∅&#10;     @inv27 sortie ∪ queue = Queue_init&#10;     @inv28 etat = entree_sas ⇒ sas=∅&#10;     @inv29 etat = sortie_sas ⇒ card(sas)=1 " org.eventb.core.label="inv24" org.eventb.core.predicate="etat2 = porte1_ouverte ⇒ valide_pass(passeport_courant) = oui"/>
+</org.eventb.core.machineFile>
