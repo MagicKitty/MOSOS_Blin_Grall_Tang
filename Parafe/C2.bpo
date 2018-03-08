@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="4">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="4">
+<org.eventb.core.poFile org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="7">
 <org.eventb.core.poIdentifier name="Passeports" org.eventb.core.type="ℙ(Passeports)"/>
 <org.eventb.core.poIdentifier name="Personnes" org.eventb.core.type="ℙ(Personnes)"/>
 <org.eventb.core.poIdentifier name="Validite" org.eventb.core.type="ℙ(Validite)"/>
@@ -15,17 +15,23 @@
 <org.eventb.core.poIdentifier name="Etats" org.eventb.core.type="ℙ(Etats)"/>
 <org.eventb.core.poIdentifier name="entree_sas" org.eventb.core.type="Etats"/>
 <org.eventb.core.poIdentifier name="sortie_sas" org.eventb.core.type="Etats"/>
-<org.eventb.core.poPredicate name="sortie_sat" org.eventb.core.predicate="entree_sas∈Etats" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#,"/>
-<org.eventb.core.poPredicate name="sortie_sau" org.eventb.core.predicate="sortie_sas∈Etats" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_-8NUsBZPEeiVKKzr1gFDUA"/>
-<org.eventb.core.poPredicate name="sortie_sav" org.eventb.core.predicate="partition(Etats,{entree_sas},{sortie_sas})" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_-8NUsRZPEeiVKKzr1gFDUA"/>
+<org.eventb.core.poIdentifier name="valide_pass" org.eventb.core.type="ℙ(Passeports×Validite)"/>
+<org.eventb.core.poPredicate name="valide_past" org.eventb.core.predicate="entree_sas∈Etats" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="valide_pasu" org.eventb.core.predicate="sortie_sas∈Etats" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_-8NUsBZPEeiVKKzr1gFDUA"/>
+<org.eventb.core.poPredicate name="valide_pasv" org.eventb.core.predicate="partition(Etats,{entree_sas},{sortie_sas})" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_-8NUsRZPEeiVKKzr1gFDUA"/>
+<org.eventb.core.poPredicate name="valide_pasw" org.eventb.core.predicate="valide_pass∈Passeports → Validite" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#__8VP8SK7EeiVf5B8Fr6DZA"/>
 <org.eventb.core.poIdentifier name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
 <org.eventb.core.poIdentifier name="OF" org.eventb.core.type="ℙ(OF)"/>
 <org.eventb.core.poIdentifier name="ferme" org.eventb.core.type="OF"/>
+<org.eventb.core.poIdentifier name="initial" org.eventb.core.type="Etats2"/>
 <org.eventb.core.poIdentifier name="ouvert" org.eventb.core.type="OF"/>
-<org.eventb.core.poIdentifier name="valide_pass" org.eventb.core.type="ℙ(Passeports×Validite)"/>
+<org.eventb.core.poIdentifier name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.poIdentifier name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.poIdentifier name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.poIdentifier name="refus" org.eventb.core.type="Etats2"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C2.bpo|org.eventb.core.poFile#C2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C2.bpo|org.eventb.core.poFile#C2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="7">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})" org.eventb.core.source="/Parafe/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#_zh1b8CKsEeiVf5B8Fr6DZA"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="valide_pass∈Passeports → Validite" org.eventb.core.source="/Parafe/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#_W-idwCKwEeiVf5B8Fr6DZA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(Etats2,{initial},{porte1_ouverte},{porte1_fermee},{refus},{porte2_ouverte})" org.eventb.core.source="/Parafe/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#_zh1b8CKsEeiVf5B8Fr6DZH"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

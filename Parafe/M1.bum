@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1520501006986" org.eventb.texttools.text_representation="machine M1 refines M0  sees C1&#10;&#10;variables etat&#10;&#9;&#9;  queue // queue est l'ensemble queue_sas + sas&#10;&#9;&#9;  queue_sas // queue_sas est la queue devant le sas&#10;&#9;&#9;  sas // ensemble des personnes dans le sas&#10;&#9;&#9;  sortie&#10;&#10;invariants&#10;  @inv1 etat ∈ Etats&#10;  @inv2 queue ∈ ℙ(Queue_init)&#10;  @inv3 sas ∈ ℙ(Queue_init)&#10;  @inv4 sortie ∈ ℙ(Queue_init)&#10;  @inv5 queue_sas ∈ ℙ(Queue_init)&#10;  @inv6 sas ∩ queue_sas = ∅&#10;  @inv7 sas ∪  queue_sas = queue&#10;  @inv8 sortie ∩ queue =  ∅&#10;  @inv9 sortie ∩  sas = ∅&#10;  @inv10 sortie ∪ sas ∪ queue = Queue_init&#10;  @inv11 etat = entree_sas ⇔  (sas = ∅)&#10;  @inv12 etat = sortie_sas ⇔ (card(sas)=1)&#10;&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act1 etat ≔ entree_sas&#10;      @act2 queue ≔ Queue_init&#10;      @act3 queue_sas ≔ Queue_init&#10;      @act4 sas ≔  ∅&#10;      @act5 sortie ≔ ∅&#10;  end&#10;&#10;  event entrer&#10;    any p&#10;    where&#10;      @grd1 etat = entree_sas&#10;      @grd2 queue_sas ≠ ∅&#10;      @grd3 p ∈ queue_sas&#10;    then&#10;      @act1 etat ≔ sortie_sas&#10;      @act2 queue_sas ≔ queue_sas ∖{p}&#10;      @act3 sas ≔ sas ∪ {p}&#10;  end&#10;&#10;  event sortir refines passage&#10;    where&#10;      @grd1 etat = sortie_sas&#10;      @grd2 finite(sas) ∧ card(sas) = 1&#10;      @grd3 ∀p·p∈sas ⇒ valide(p) = oui&#10;    with&#10;      @p sas = {p}&#10;    then&#10;      @act1 etat ≔ entree_sas&#10;      @act2 sortie ≔ sortie ∪ sas&#10;      @act3 sas ≔ ∅&#10;      @act4 queue ≔ queue ∖ sas&#10;  end&#10;&#10;  event refus&#10;    where&#10;      @grd1 etat = sortie_sas&#10;      @grd2 finite(sas) ∧ card(sas) = 1&#10;      @grd3 ∃p·p∈sas ∧ valide(p) = non&#10;    then&#10;      @act1 etat ≔ entree_sas&#10;      @act2 sas ≔ ∅&#10;      @act3 queue_sas ≔ queue_sas ∪ sas&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1520505387634" org.eventb.texttools.text_representation="machine M1 refines M0  sees C1&#10;&#10;variables etat&#10;&#9;&#9;  queue // queue est l'ensemble queue_sas + sas&#10;&#9;&#9;  queue_sas // queue_sas est la queue devant le sas&#10;&#9;&#9;  sas // ensemble des personnes dans le sas&#10;&#9;&#9;  sortie&#10;&#10;invariants&#10;  @inv1 etat ∈ Etats&#10;  @inv2 queue ∈ ℙ(Queue_init)&#10;  @inv3 sas ∈ ℙ(Queue_init)&#10;  @inv4 sortie ∈ ℙ(Queue_init)&#10;  @inv5 queue_sas ∈ ℙ(Queue_init)&#10;  @inv6 sas ∩ queue_sas = ∅&#10;  @inv7 sas ∪  queue_sas = queue&#10;  @inv8 sortie ∩ queue =  ∅&#10;  @inv9 sortie ∩  sas = ∅&#10;  @inv10 sortie ∪ sas ∪ queue = Queue_init&#10;  @inv11 etat = entree_sas ⇔  (sas = ∅)&#10;  @inv12 etat = sortie_sas ⇔ (card(sas)=1)&#10;&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act1 etat ≔ entree_sas&#10;      @act2 queue ≔ Queue_init&#10;      @act3 queue_sas ≔ Queue_init&#10;      @act4 sas ≔  ∅&#10;      @act5 sortie ≔ ∅&#10;  end&#10;&#10;  event entrer&#10;    any pers pass&#10;    where&#10;      @grd1 etat = entree_sas&#10;      @grd2 queue_sas ≠ ∅&#10;      @grd3 pers ↦ pass ∈ queue_sas&#10;      @grd4 valide_pass(pass) = oui&#10;    then&#10;      @act1 etat ≔ sortie_sas&#10;      @act2 queue_sas ≔ queue_sas ∖{pers ↦ pass}&#10;      @act3 sas ≔ sas ∪ {pers ↦ pass}&#10;  end&#10;&#10;  event sortir refines passage&#10;    where&#10;      @grd1 etat = sortie_sas&#10;      @grd2 finite(sas) ∧ card(sas) = 1&#10;      @grd3 ∀p·p∈sas ⇒ valide(p) = oui&#10;    with&#10;      @p sas = {p}&#10;    then&#10;      @act1 etat ≔ entree_sas&#10;      @act2 sortie ≔ sortie ∪ sas&#10;      @act3 sas ≔ ∅&#10;      @act4 queue ≔ queue ∖ sas&#10;  end&#10;&#10;  event refus&#10;    where&#10;      @grd1 etat = sortie_sas&#10;      @grd2 finite(sas) ∧ card(sas) = 1&#10;      @grd3 ∃p·p∈sas ∧ valide(p) = non&#10;    then&#10;      @act1 etat ≔ entree_sas&#10;      @act2 sas ≔ ∅&#10;      @act3 queue_sas ≔ queue_sas ∪ sas&#10;  end&#10;end&#10;" version="5">
 <org.eventb.core.refinesMachine name="(" org.eventb.core.target="M0"/>
 <org.eventb.core.seesContext name=")" org.eventb.core.target="C1"/>
 <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
@@ -18,25 +18,27 @@
 <org.eventb.core.variable name="2" org.eventb.core.comment="queue_sas est la queue devant le sas" org.eventb.core.identifier="queue_sas"/>
 <org.eventb.core.invariant name="3" org.eventb.core.label="inv5" org.eventb.core.predicate="queue_sas ∈ ℙ(Queue_init)"/>
 <org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="entrer">
-<org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="pers"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="etat = entree_sas"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="queue_sas ≠ ∅"/>
 <org.eventb.core.action name="_6gPj4BZIEeiVKKzr1gFDUA" org.eventb.core.assignment="etat ≔ sortie_sas" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="*" org.eventb.core.assignment="queue_sas ≔ queue_sas ∖{p}" org.eventb.core.label="act2"/>
-<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="p ∈ queue_sas"/>
-<org.eventb.core.action name="+" org.eventb.core.assignment="sas ≔ sas ∪ {p}" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="queue_sas ≔ queue_sas ∖{pers ↦ pass}" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="pers ↦ pass ∈ queue_sas"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="sas ≔ sas ∪ {pers ↦ pass}" org.eventb.core.label="act3"/>
+<org.eventb.core.parameter name="_zQ0moCK7EeiVf5B8Fr6DZA" org.eventb.core.identifier="pass"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="valide_pass(pass) = oui"/>
 </org.eventb.core.event>
 <org.eventb.core.invariant name="_aWGI4RZOEeiVKKzr1gFDUA" org.eventb.core.label="inv6" org.eventb.core.predicate="sas ∩ queue_sas = ∅"/>
 <org.eventb.core.event name="_aWGI4RZOEeiVKKzr1gFDUB" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="sortir">
 <org.eventb.core.refinesEvent name="_kZgqYBZVEeiVKKzr1gFDUA" org.eventb.core.target="passage"/>
-<org.eventb.core.guard name="." org.eventb.core.label="grd1" org.eventb.core.predicate="etat = sortie_sas"/>
-<org.eventb.core.guard name="'" org.eventb.core.label="grd2" org.eventb.core.predicate="finite(sas) ∧ card(sas) = 1"/>
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="etat = sortie_sas"/>
 <org.eventb.core.action name="," org.eventb.core.assignment="etat ≔ entree_sas" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="_d8Jv8BZWEeiVKKzr1gFDUA" org.eventb.core.assignment="sortie ≔ sortie ∪ sas" org.eventb.core.label="act2"/>
 <org.eventb.core.witness name="_kZgqYBZVEeiVKKzr1gFDUB" org.eventb.core.label="p" org.eventb.core.predicate="sas = {p}"/>
-<org.eventb.core.guard name="_po4R0CCTEeiK-4ay-k1Rtg" org.eventb.core.label="grd3" org.eventb.core.predicate="∀p·p∈sas ⇒ valide(p) = oui"/>
+<org.eventb.core.guard name="_po4R0CCTEeiK-4ay-k1Rtg" org.eventb.core.label="grd2" org.eventb.core.predicate="finite(sas) ∧ card(sas) = 1"/>
 <org.eventb.core.action name="_n7r6wCCUEeiK-4ay-k1Rtg" org.eventb.core.assignment="sas ≔ ∅" org.eventb.core.label="act3"/>
 <org.eventb.core.action name="_zDy3oCCUEeiK-4ay-k1Rtg" org.eventb.core.assignment="queue ≔ queue ∖ sas" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name="_T0a1sCKxEeiVf5B8Fr6DZA" org.eventb.core.label="grd3" org.eventb.core.predicate="∀p·p∈sas ⇒ valide(p) = oui"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="_sXqzwBZVEeiVKKzr1gFDUA" org.eventb.core.comment="ensemble des personnes dans le sas" org.eventb.core.identifier="sas"/>
 <org.eventb.core.invariant name="_sXqzwRZVEeiVKKzr1gFDUA" org.eventb.core.label="inv7" org.eventb.core.predicate="sas ∪  queue_sas = queue"/>
@@ -47,9 +49,9 @@
 <org.eventb.core.invariant name="_d9Rw4SCUEeiK-4ay-k1Rtg" org.eventb.core.label="inv11" org.eventb.core.predicate="etat = entree_sas ⇔  (sas = ∅)"/>
 <org.eventb.core.invariant name="_i14ekCCUEeiK-4ay-k1Rtg" org.eventb.core.label="inv12" org.eventb.core.predicate="etat = sortie_sas ⇔ (card(sas)=1)"/>
 <org.eventb.core.event name="_T0aOoCKxEeiVf5B8Fr6DZA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="refus">
-<org.eventb.core.guard name="_T0a1sCKxEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat = sortie_sas"/>
-<org.eventb.core.guard name="_T0a1sSKxEeiVf5B8Fr6DZA" org.eventb.core.label="grd2" org.eventb.core.predicate="finite(sas) ∧ card(sas) = 1"/>
-<org.eventb.core.guard name="_T0a1siKxEeiVf5B8Fr6DZA" org.eventb.core.label="grd3" org.eventb.core.predicate="∃p·p∈sas ∧ valide(p) = non"/>
+<org.eventb.core.guard name="_T0a1sSKxEeiVf5B8Fr6DZA" org.eventb.core.label="grd1" org.eventb.core.predicate="etat = sortie_sas"/>
+<org.eventb.core.guard name="_T0a1siKxEeiVf5B8Fr6DZA" org.eventb.core.label="grd2" org.eventb.core.predicate="finite(sas) ∧ card(sas) = 1"/>
+<org.eventb.core.guard name="_5nRyYCK7EeiVf5B8Fr6DZA" org.eventb.core.label="grd3" org.eventb.core.predicate="∃p·p∈sas ∧ valide(p) = non"/>
 <org.eventb.core.action name="_T0a1syKxEeiVf5B8Fr6DZA" org.eventb.core.assignment="etat ≔ entree_sas" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="_T0bcwCKxEeiVf5B8Fr6DZA" org.eventb.core.assignment="sas ≔ ∅" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="_T0bcwSKxEeiVf5B8Fr6DZA" org.eventb.core.assignment="queue_sas ≔ queue_sas ∪ sas" org.eventb.core.label="act3"/>
