@@ -26176,18 +26176,179 @@
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="etat=sortie_sas⇒finite(sas)"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv25/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="Passeports,Personnes">
+<org.eventb.core.prProof name="INITIALISATION/inv25/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="Passeports,Personnes,Validite">
 <org.eventb.core.lang name="L"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Validite,{oui},{non}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p2,p3"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Etats,{entree_sas},{sortie_sas},{lecture_pass}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5,p6,p7,p8"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p5,p6,p7,p8"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(OF,{ouvert},{ferme}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p9" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p10,p11"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p10,p11"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Etats2,{initial},{porte1_ouverte},{porte1_fermee},{refus},{porte2_ouverte}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p28">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p24" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p25"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p26" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p27"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p28" org.eventb.core.prHyps=""/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
+<org.eventb.core.prIdent name="valide" org.eventb.core.type="ℙ(Personnes×Passeports×Validite)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬sortie_sas=lecture_pass">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="lecture_pass" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬porte1_fermee=porte2_ouverte">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈(∅ ⦂ ℙ(Personnes×Passeports))⇒valide(p)=oui"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬initial=porte2_ouverte">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p27" org.eventb.core.predicate="∀pers⦂Personnes,pass⦂Passeports·valide(pers ↦ pass)=oui⇒valide_pass(pass)=oui">
+<org.eventb.core.prIdent name="valide_pass" org.eventb.core.type="ℙ(Passeports×Validite)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬porte1_ouverte=porte2_ouverte">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬entree_sas=sortie_sas">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="partition(Etats2,{initial},{porte1_ouverte},{porte1_fermee},{refus},{porte2_ouverte})">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="Etats={entree_sas,sortie_sas,lecture_pass}">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="lecture_pass" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="OF={ouvert,ferme}">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬initial=porte1_fermee">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="¬refus=porte2_ouverte">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="∀pers⦂Personnes·∀pass⦂Passeports·valide(pers ↦ pass)=oui⇒valide_pass(pass)=oui">
+<org.eventb.core.prIdent name="valide_pass" org.eventb.core.type="ℙ(Passeports×Validite)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬porte1_fermee=refus">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Validite,{oui},{non})">
+<org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="∀pers⦂Personnes,pass1⦂Passeports,pass2⦂Passeports·pers∈Personnes∧pass1∈Passeports∧pass2∈Passeports∧¬pass1=pass2∧pers ↦ pass1∈Queue_init⇒¬pers ↦ pass2∈Queue_init">
 <org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(Personnes×Passeports))∩Queue_init=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬initial=porte1_ouverte">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬oui=non">
+<org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="∀pers⦂Personnes·∀pass1⦂Passeports·∀pass2⦂Passeports·pers∈Personnes∧pass1∈Passeports∧pass2∈Passeports∧pass1≠pass2∧pers ↦ pass1∈Queue_init⇒pers ↦ pass2∉Queue_init">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬entree_sas=lecture_pass">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="lecture_pass" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬ouvert=ferme">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬porte1_ouverte=refus">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬initial=refus">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬porte1_ouverte=porte1_fermee">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="Validite={oui,non}">
+<org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="Etats2={initial,porte1_ouverte,porte1_fermee,refus,porte2_ouverte}">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="partition(Etats,{entree_sas},{sortie_sas},{lecture_pass})">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="lecture_pass" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/inv26/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="Passeports,Personnes">
 <org.eventb.core.lang name="L"/>
@@ -27031,72 +27192,155 @@
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="ouverture_porte2/inv25/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37" org.eventb.core.prSets="Etats,Etats2,OF,Passeports,Personnes,Validite">
+<org.eventb.core.prProof name="ouverture_porte2/inv25/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="p,pers,x,x0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="Etats,Etats2,Passeports,Personnes,Validite" org.eventb.core.psManual="true">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Validite,{oui},{non}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p38,p39"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p38,p39"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9,p10"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p9,p10"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Etats,{entree_sas},{sortie_sas}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p40,p41"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p40,p41"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p12,p13"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p12,p13"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(OF,{ouvert},{ferme}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p29" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p42,p43"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p42,p43"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15,p16"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p15,p16"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Etats2,{initial},{porte1_ouverte},{porte1_fermee},{refus},{porte2_ouverte}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p44,p45,p46,p47,p48,p49,p50,p51,p52,p53,p54"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p44,p45,p46,p47,p48,p49,p50,p51,p52,p53,p54"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p17" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(queue_sas,queue_sas1,queue_sas2))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p55,p56"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p55,p56"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p29" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p30,p31"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p30,p31"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(sortie,sortie1,sortie2))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p31" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p57,p58"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p57,p58"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p32,p33"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p32,p33"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p20" org.eventb.core.prHyps="p26" org.eventb.core.prInfHyps="p59"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p67">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p21" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p60"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p61"/>
-<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p32" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p62"/>
-<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p36" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p63"/>
-<org.eventb.core.prHypAction name="REWRITE4" org.eventb.core.prHidden="p17" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p64"/>
-<org.eventb.core.prHypAction name="REWRITE5" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p65"/>
-<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p59" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p66"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="p66" org.eventb.core.prInfHyps="p68"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p62" org.eventb.core.prHyps="p66" org.eventb.core.prInfHyps="p69"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="p7" org.eventb.core.prInfHyps="p34"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p68" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p70"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p69" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p71"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p35" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p36"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p37" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p38"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p39"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p40" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p41"/>
+<org.eventb.core.prHypAction name="REWRITE4" org.eventb.core.prHidden="p42" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p43"/>
+<org.eventb.core.prHypAction name="REWRITE5" org.eventb.core.prHidden="p44" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p45"/>
+<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p46" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p47"/>
+<org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p34" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p48"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p49" org.eventb.core.prHyps="p48" org.eventb.core.prInfHyps="p50"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p39" org.eventb.core.prHyps="p48" org.eventb.core.prInfHyps="p51"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p50" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p52"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p51" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p53"/>
 <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p72"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p73"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p74"/>
-<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p75"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p76"/>
-<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p77"/>
-<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p78"/>
-<org.eventb.core.prHypAction name="HIDE7" org.eventb.core.prHyps="p79"/>
-<org.eventb.core.prHypAction name="REWRITE8" org.eventb.core.prHidden="p60" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p80"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p54"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p55"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p56"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p57"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p58"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p59"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p60"/>
+<org.eventb.core.prHypAction name="HIDE7" org.eventb.core.prHyps="p61"/>
+<org.eventb.core.prHypAction name="REWRITE8" org.eventb.core.prHidden="p36" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p62"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p80" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p81"/>
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with sortie=sortie1∪sortie2" org.eventb.core.prGoal="p67" org.eventb.core.prHyps="p58">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p62" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p63"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with sortie=sortie1∪sortie2" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p33">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p65">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p64"/>
+<org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p66"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∃ hyp (∃pers·pers ↦ passeport_courant∈sas∧valide(pers ↦ passeport_courant)=oui)" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p67,p68">
+<org.eventb.core.prIdent name="pers" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prHypAction>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p67,p68"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∃ hyp (∃x,x0·sas={x ↦ x0})" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p53" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p69">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prHypAction>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p69"/>
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with valide(pers ↦ passeport_courant)=oui" org.eventb.core.prGoal="p65" org.eventb.core.prHyps="p68">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p73">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p9" org.eventb.core.prInfHyps="p70"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p10" org.eventb.core.prInfHyps="p71"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p64" org.eventb.core.prInfHyps="p72"/>
+<org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p9,p10,p64"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with sas={x ↦ x0}" org.eventb.core.prGoal="p73" org.eventb.core.prHyps="p69">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p76">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p52" org.eventb.core.prInfHyps="p74"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p67" org.eventb.core.prInfHyps="p75"/>
+<org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p52,p67"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p74"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p75" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p77,p78"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with pers=x" org.eventb.core.prGoal="p76" org.eventb.core.prHyps="p77">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p83">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p82"/>
-<org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p15"/>
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p83" org.eventb.core.prHyps="p2,p56,p3,p4,p54,p41,p43,p10,p12,p15,p52,p19,p39,p64,p23,p24,p65,p26,p71,p82,p30,p38,p55,p53,p35,p37,p81,p1,p49,p50,p61,p7,p9,p63,p45,p46,p47,p16,p57,p66,p22,p25,p40,p27,p42,p28,p44,p48,p33,p51,p58,p70,p34">
-<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p68" org.eventb.core.prInfHyps="p79"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p70" org.eventb.core.prInfHyps="p80"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p71" org.eventb.core.prInfHyps="p81"/>
+<org.eventb.core.prHypAction name="FORWARD_INF3" org.eventb.core.prHyps="p72" org.eventb.core.prInfHyps="p82"/>
+<org.eventb.core.prHypAction name="DESELECT4" org.eventb.core.prHyps="p68,p70,p71,p72"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with passeport_courant=x0" org.eventb.core.prGoal="p83" org.eventb.core.prHyps="p78">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p88">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p79" org.eventb.core.prInfHyps="p84"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p80" org.eventb.core.prInfHyps="p85"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p81" org.eventb.core.prInfHyps="p86"/>
+<org.eventb.core.prHypAction name="FORWARD_INF3" org.eventb.core.prHyps="p82" org.eventb.core.prInfHyps="p87"/>
+<org.eventb.core.prHypAction name="DESELECT4" org.eventb.core.prHyps="p79,p80,p81,p82"/>
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees p)" org.eventb.core.prGoal="p88" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p89">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+<org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p89" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p91" org.eventb.core.prHyps="p90">
+<org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="DESELECT0" org.eventb.core.prHyps="p31,p78,p23,p24,p69,p28,p7,p15,p84,p85,p18,p16,p19,p20,p21,p22,p25,p33,p77,p26,p30,p27,p32,p48"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Etats,{entree_sas},{sortie_sas},{lecture_pass}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p92,p13,p93,p94"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p92,p13,p93,p94"/>
+<org.eventb.core.prRule name="r10" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p91" org.eventb.core.prHyps="p86,p87,p90,p92,p13,p93,p94">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
@@ -27130,123 +27374,296 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
 <org.eventb.core.prIdent name="etat" org.eventb.core.type="Etats"/>
 <org.eventb.core.prIdent name="etat2" org.eventb.core.type="Etats2"/>
-<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
-<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="lecture_pass" org.eventb.core.type="Etats"/>
 <org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
 <org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
-<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="passeport_courant" org.eventb.core.type="Passeports"/>
-<org.eventb.core.prIdent name="porte1" org.eventb.core.type="OF"/>
 <org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
-<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
-<org.eventb.core.prIdent name="porte2" org.eventb.core.type="OF"/>
-<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
-<org.eventb.core.prIdent name="queue" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prIdent name="queue_sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prIdent name="queue_sas1" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prIdent name="queue_sas2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
-<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
 <org.eventb.core.prIdent name="sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="sortie" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="sortie1" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="sortie2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
 <org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
 <org.eventb.core.prIdent name="valide" org.eventb.core.type="ℙ(Personnes×Passeports×Validite)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie⇒valide(p)=oui"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="queue_sas1∩queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))">
+<org.eventb.core.prIdent name="queue_sas1" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="queue_sas2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie∪sas⇒valide(p)=oui"/>
+<org.eventb.core.prPred name="p72" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie1∪sortie2⇒valide(p)=valide(pers ↦ passeport_courant)">
+<org.eventb.core.prIdent name="pers" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p90" org.eventb.core.predicate="p∈sortie1∪sortie2∪{x ↦ x0}">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p69" org.eventb.core.predicate="sas={x ↦ x0}">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="¬porte1_ouverte=porte2_ouverte">
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p86" org.eventb.core.predicate="¬valide(x ↦ x0)=non">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬entree_sas=sortie_sas"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="partition(Etats2,{initial},{porte1_ouverte},{porte1_fermee},{refus},{porte2_ouverte})">
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p49" org.eventb.core.predicate="etat=sortie_sas⇒finite(sas)"/>
+<org.eventb.core.prPred name="p82" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie1∪sortie2⇒valide(p)=valide(x ↦ passeport_courant)">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p44" org.eventb.core.predicate="sas≠(∅ ⦂ ℙ(Personnes×Passeports))⇒queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))∧sortie1=(∅ ⦂ ℙ(Personnes×Passeports))">
+<org.eventb.core.prIdent name="queue_sas2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="OF={ouvert,ferme}">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p37" org.eventb.core.predicate="∀pers⦂Personnes·∀pass⦂Passeports·valide(pers ↦ pass)=oui⇒valide_pass(pass)=oui">
 <org.eventb.core.prIdent name="valide_pass" org.eventb.core.type="ℙ(Passeports×Validite)"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie⇒valide(p)=oui"/>
-<org.eventb.core.prPred name="p56" org.eventb.core.predicate="queue_sas1∩queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="finite(Queue_init)"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="sortie2∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p54" org.eventb.core.predicate="¬porte1_ouverte=porte2_ouverte"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(Etats2,{initial},{porte1_ouverte},{porte1_fermee},{refus},{porte2_ouverte})"/>
-<org.eventb.core.prPred name="p41" org.eventb.core.predicate="¬entree_sas=sortie_sas"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="etat=sortie_sas⇒finite(sas)"/>
-<org.eventb.core.prPred name="p43" org.eventb.core.predicate="OF={ouvert,ferme}"/>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="sas∪queue_sas=queue"/>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀pers⦂Personnes·∀pass⦂Passeports·valide(pers ↦ pass)=oui⇒valide_pass(pass)=oui"/>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="queue∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="sortie∩queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p52" org.eventb.core.predicate="¬initial=porte1_ouverte"/>
-<org.eventb.core.prPred name="p78" org.eventb.core.predicate="porte2∈OF"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="∀pers⦂Personnes·∀pass⦂Passeports·pers ↦ pass∈sas⇒pass=passeport_courant∧valide(pers ↦ pass)=oui"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="sas∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p39" org.eventb.core.predicate="¬oui=non"/>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="etat2=porte1_fermee⇔etat=sortie_sas"/>
-<org.eventb.core.prPred name="p64" org.eventb.core.predicate="¬queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))∨¬sortie1=(∅ ⦂ ℙ(Personnes×Passeports))⇒sas=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p23" org.eventb.core.predicate="etat2∈{refus,porte1_ouverte}⇔porte1=ouvert"/>
-<org.eventb.core.prPred name="p24" org.eventb.core.predicate="valide_pass∈Passeports → Validite"/>
-<org.eventb.core.prPred name="p65" org.eventb.core.predicate="∀pers⦂Personnes,pass⦂Passeports·pers ↦ pass∈sas⇒pass=passeport_courant∧valide(pers ↦ pass)=oui"/>
-<org.eventb.core.prPred name="p26" org.eventb.core.predicate="etat2=porte1_fermee"/>
-<org.eventb.core.prPred name="p71" org.eventb.core.predicate="∃x⦂Personnes,x0⦂Passeports·sas={x ↦ x0}"/>
-<org.eventb.core.prPred name="p82" org.eventb.core.predicate="(sortie1∪sortie2)∩queue=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(sortie∪sas)∩(queue ∖ sas)=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p30" org.eventb.core.predicate="queue_sas2∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p72" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)"/>
-<org.eventb.core.prPred name="p32" org.eventb.core.predicate="etat=sortie_sas⇒card(sas)=1"/>
-<org.eventb.core.prPred name="p38" org.eventb.core.predicate="Validite={oui,non}"/>
-<org.eventb.core.prPred name="p55" org.eventb.core.predicate="queue_sas=queue_sas1∪queue_sas2"/>
-<org.eventb.core.prPred name="p53" org.eventb.core.predicate="Etats2={initial,porte1_ouverte,porte1_fermee,refus,porte2_ouverte}"/>
-<org.eventb.core.prPred name="p67" org.eventb.core.predicate="(sortie∪sas)∩queue⊆sas"/>
-<org.eventb.core.prPred name="p35" org.eventb.core.predicate="etat=entree_sas⇒sas=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p36" org.eventb.core.predicate="etat2∈{porte2_ouverte}⇔porte2=ouvert"/>
-<org.eventb.core.prPred name="p75" org.eventb.core.predicate="etat∈Etats"/>
-<org.eventb.core.prPred name="p37" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite"/>
-<org.eventb.core.prPred name="p81" org.eventb.core.predicate="∀pers⦂Personnes,pass1⦂Passeports,pass2⦂Passeports·¬pass1=pass2∧pers ↦ pass1∈Queue_init⇒¬pers ↦ pass2∈Queue_init"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="porte1=ferme⇒queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p74" org.eventb.core.predicate="sortie_sas∈Etats"/>
-<org.eventb.core.prPred name="p49" org.eventb.core.predicate="¬porte1_fermee=porte2_ouverte"/>
-<org.eventb.core.prPred name="p50" org.eventb.core.predicate="¬initial=porte2_ouverte"/>
-<org.eventb.core.prPred name="p61" org.eventb.core.predicate="∀pers⦂Personnes,pass⦂Passeports·valide(pers ↦ pass)=oui⇒valide_pass(pass)=oui"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(queue_sas,queue_sas1,queue_sas2)"/>
-<org.eventb.core.prPred name="p77" org.eventb.core.predicate="porte1∈OF"/>
-<org.eventb.core.prPred name="p59" org.eventb.core.predicate="⊤⇔etat=sortie_sas"/>
-<org.eventb.core.prPred name="p73" org.eventb.core.predicate="entree_sas∈Etats"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="sortie∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p83" org.eventb.core.predicate="(sortie1∪sortie2∪sas)∩queue⊆sas"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="sortie∩sas=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p79" org.eventb.core.predicate="passeport_courant∈Passeports"/>
-<org.eventb.core.prPred name="p63" org.eventb.core.predicate="etat2=porte2_ouverte⇔porte2=ouvert"/>
-<org.eventb.core.prPred name="p45" org.eventb.core.predicate="¬initial=porte1_fermee"/>
-<org.eventb.core.prPred name="p46" org.eventb.core.predicate="¬refus=porte2_ouverte"/>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="partition(Etats,{entree_sas},{sortie_sas})"/>
-<org.eventb.core.prPred name="p47" org.eventb.core.predicate="¬porte1_fermee=refus"/>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="partition(Validite,{oui},{non})"/>
-<org.eventb.core.prPred name="p60" org.eventb.core.predicate="∀pers⦂Personnes,pass1⦂Passeports,pass2⦂Passeports·pers∈Personnes∧pass1∈Passeports∧pass2∈Passeports∧¬pass1=pass2∧pers ↦ pass1∈Queue_init⇒¬pers ↦ pass2∈Queue_init"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="porte2=ferme⇒sortie1=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="queue_sas2≠(∅ ⦂ ℙ(Personnes×Passeports))∨sortie1≠(∅ ⦂ ℙ(Personnes×Passeports))⇒sas=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p57" org.eventb.core.predicate="sortie1∩sortie2=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p62" org.eventb.core.predicate="etat=sortie_sas⇒(∃x⦂Personnes,x0⦂Passeports·sas={x ↦ x0})"/>
-<org.eventb.core.prPred name="p66" org.eventb.core.predicate="etat=sortie_sas"/>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="∀pers⦂Personnes·∀pass1⦂Passeports·∀pass2⦂Passeports·pers∈Personnes∧pass1∈Passeports∧pass2∈Passeports∧pass1≠pass2∧pers ↦ pass1∈Queue_init⇒pers ↦ pass2∉Queue_init"/>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="queue_sas1∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p25" org.eventb.core.predicate="etat2∈{initial,porte1_ouverte,porte2_ouverte,refus}⇔etat=entree_sas"/>
-<org.eventb.core.prPred name="p40" org.eventb.core.predicate="Etats={entree_sas,sortie_sas}"/>
-<org.eventb.core.prPred name="p27" org.eventb.core.predicate="queue_sas∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p42" org.eventb.core.predicate="¬ouvert=ferme"/>
-<org.eventb.core.prPred name="p28" org.eventb.core.predicate="sas∩queue_sas=(∅ ⦂ ℙ(Personnes×Passeports))"/>
-<org.eventb.core.prPred name="p29" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})"/>
-<org.eventb.core.prPred name="p76" org.eventb.core.predicate="etat2∈Etats2"/>
-<org.eventb.core.prPred name="p44" org.eventb.core.predicate="¬porte1_ouverte=refus"/>
-<org.eventb.core.prPred name="p31" org.eventb.core.predicate="partition(sortie,sortie1,sortie2)"/>
-<org.eventb.core.prPred name="p48" org.eventb.core.predicate="¬initial=refus"/>
-<org.eventb.core.prPred name="p80" org.eventb.core.predicate="∀pers⦂Personnes,pass1⦂Passeports,pass2⦂Passeports·⊤∧⊤∧⊤∧¬pass1=pass2∧pers ↦ pass1∈Queue_init⇒¬pers ↦ pass2∈Queue_init"/>
-<org.eventb.core.prPred name="p33" org.eventb.core.predicate="sortie∪queue=Queue_init"/>
-<org.eventb.core.prPred name="p68" org.eventb.core.predicate="⊤⇒finite(sas)"/>
-<org.eventb.core.prPred name="p51" org.eventb.core.predicate="¬porte1_ouverte=porte1_fermee"/>
-<org.eventb.core.prPred name="p58" org.eventb.core.predicate="sortie=sortie1∪sortie2"/>
-<org.eventb.core.prPred name="p70" org.eventb.core.predicate="finite(sas)"/>
-<org.eventb.core.prPred name="p34" org.eventb.core.predicate="sortie1∈ℙ(Queue_init)"/>
-<org.eventb.core.prPred name="p69" org.eventb.core.predicate="⊤⇒(∃x⦂Personnes,x0⦂Passeports·sas={x ↦ x0})"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∃pers⦂Personnes·pers ↦ passeport_courant∈sas∧valide(pers ↦ passeport_courant)=oui"/>
+<org.eventb.core.prPred name="p73" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie1∪sortie2∪sas⇒valide(p)=valide(pers ↦ passeport_courant)">
+<org.eventb.core.prIdent name="pers" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬initial=porte1_ouverte">
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p60" org.eventb.core.predicate="porte2∈OF">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="porte2" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p65" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie1∪sortie2∪sas⇒valide(p)=oui"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬oui=non"/>
+<org.eventb.core.prPred name="p74" org.eventb.core.predicate="finite({x ↦ x0})">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="etat2=porte1_fermee⇔etat=sortie_sas"/>
+<org.eventb.core.prPred name="p93" org.eventb.core.predicate="¬entree_sas=lecture_pass"/>
+<org.eventb.core.prPred name="p45" org.eventb.core.predicate="¬sas=(∅ ⦂ ℙ(Personnes×Passeports))⇒queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))∧sortie1=(∅ ⦂ ℙ(Personnes×Passeports))">
+<org.eventb.core.prIdent name="queue_sas2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p47" org.eventb.core.predicate="¬queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))∨¬sortie1=(∅ ⦂ ℙ(Personnes×Passeports))⇒sas=(∅ ⦂ ℙ(Personnes×Passeports))">
+<org.eventb.core.prIdent name="queue_sas2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="etat2=porte1_fermee"/>
+<org.eventb.core.prPred name="p64" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie1∪sortie2⇒valide(p)=oui"/>
+<org.eventb.core.prPred name="p53" org.eventb.core.predicate="∃x⦂Personnes,x0⦂Passeports·sas={x ↦ x0}"/>
+<org.eventb.core.prPred name="p85" org.eventb.core.predicate="Validite={valide(x ↦ x0),non}">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p89" org.eventb.core.predicate="p∈sortie1∪sortie2∪{x ↦ x0}⇒valide(p)=valide(x ↦ x0)">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p54" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="etat=sortie_sas⇒card(sas)=1"/>
+<org.eventb.core.prPred name="p77" org.eventb.core.predicate="pers=x">
+<org.eventb.core.prIdent name="pers" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="Validite={oui,non}"/>
+<org.eventb.core.prPred name="p30" org.eventb.core.predicate="queue_sas=queue_sas1∪queue_sas2">
+<org.eventb.core.prIdent name="queue_sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="queue_sas1" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="queue_sas2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p42" org.eventb.core.predicate="etat2∈{porte1_ouverte}⇔etat=entree_sas">
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p27" org.eventb.core.predicate="Etats2={initial,porte1_ouverte,porte1_fermee,refus,porte2_ouverte}">
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p40" org.eventb.core.predicate="etat2∈{porte2_ouverte}⇔porte2=ouvert">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="porte2" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p57" org.eventb.core.predicate="etat∈Etats"/>
+<org.eventb.core.prPred name="p63" org.eventb.core.predicate="∀pers⦂Personnes,pass1⦂Passeports,pass2⦂Passeports·¬pass1=pass2∧pers ↦ pass1∈Queue_init⇒¬pers ↦ pass2∈Queue_init">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p76" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie1∪sortie2∪{x ↦ x0}⇒valide(p)=valide(pers ↦ passeport_courant)">
+<org.eventb.core.prIdent name="pers" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p56" org.eventb.core.predicate="sortie_sas∈Etats"/>
+<org.eventb.core.prPred name="p78" org.eventb.core.predicate="passeport_courant=x0">
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p94" org.eventb.core.predicate="¬sortie_sas=lecture_pass"/>
+<org.eventb.core.prPred name="p83" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie1∪sortie2∪{x ↦ x0}⇒valide(p)=valide(x ↦ passeport_courant)">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="¬porte1_fermee=porte2_ouverte">
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p70" org.eventb.core.predicate="Validite={valide(pers ↦ passeport_courant),non}">
+<org.eventb.core.prIdent name="pers" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="¬initial=porte2_ouverte">
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p38" org.eventb.core.predicate="∀pers⦂Personnes,pass⦂Passeports·valide(pers ↦ pass)=oui⇒valide_pass(pass)=oui">
+<org.eventb.core.prIdent name="valide_pass" org.eventb.core.type="ℙ(Passeports×Validite)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p79" org.eventb.core.predicate="valide(x ↦ passeport_courant)=oui">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="partition(queue_sas,queue_sas1,queue_sas2)">
+<org.eventb.core.prIdent name="queue_sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="queue_sas1" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="queue_sas2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p59" org.eventb.core.predicate="porte1∈OF">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="porte1" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p34" org.eventb.core.predicate="⊤⇔etat=sortie_sas"/>
+<org.eventb.core.prPred name="p55" org.eventb.core.predicate="entree_sas∈Etats"/>
+<org.eventb.core.prPred name="p91" org.eventb.core.predicate="valide(p)=valide(x ↦ x0)">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p75" org.eventb.core.predicate="pers ↦ passeport_courant∈{x ↦ x0}">
+<org.eventb.core.prIdent name="pers" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p61" org.eventb.core.predicate="passeport_courant∈Passeports"/>
+<org.eventb.core.prPred name="p41" org.eventb.core.predicate="etat2=porte2_ouverte⇔porte2=ouvert">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="porte2" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p66" org.eventb.core.predicate="lecture_pass∈Etats"/>
+<org.eventb.core.prPred name="p92" org.eventb.core.predicate="Etats={entree_sas,sortie_sas,lecture_pass}"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬initial=porte1_fermee">
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬refus=porte2_ouverte">
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="partition(Etats,{entree_sas},{sortie_sas})"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬porte1_fermee=refus">
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p68" org.eventb.core.predicate="valide(pers ↦ passeport_courant)=oui">
+<org.eventb.core.prIdent name="pers" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(Validite,{oui},{non})"/>
+<org.eventb.core.prPred name="p36" org.eventb.core.predicate="∀pers⦂Personnes,pass1⦂Passeports,pass2⦂Passeports·pers∈Personnes∧pass1∈Passeports∧pass2∈Passeports∧¬pass1=pass2∧pers ↦ pass1∈Queue_init⇒¬pers ↦ pass2∈Queue_init">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p71" org.eventb.core.predicate="¬valide(pers ↦ passeport_courant)=non">
+<org.eventb.core.prIdent name="pers" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="sortie1∩sortie2=(∅ ⦂ ℙ(Personnes×Passeports))"/>
+<org.eventb.core.prPred name="p39" org.eventb.core.predicate="etat=sortie_sas⇒(∃x⦂Personnes,x0⦂Passeports·sas={x ↦ x0})"/>
+<org.eventb.core.prPred name="p46" org.eventb.core.predicate="queue_sas2≠(∅ ⦂ ℙ(Personnes×Passeports))∨sortie1≠(∅ ⦂ ℙ(Personnes×Passeports))⇒sas=(∅ ⦂ ℙ(Personnes×Passeports))">
+<org.eventb.core.prIdent name="queue_sas2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p81" org.eventb.core.predicate="¬valide(x ↦ passeport_courant)=non">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p48" org.eventb.core.predicate="etat=sortie_sas"/>
+<org.eventb.core.prPred name="p87" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie1∪sortie2⇒valide(p)=valide(x ↦ x0)">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="∀pers⦂Personnes·∀pass1⦂Passeports·∀pass2⦂Passeports·pers∈Personnes∧pass1∈Passeports∧pass2∈Passeports∧pass1≠pass2∧pers ↦ pass1∈Queue_init⇒pers ↦ pass2∉Queue_init">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p43" org.eventb.core.predicate="etat2=porte1_ouverte⇔etat=entree_sas">
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="Etats={entree_sas,sortie_sas}"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬ouvert=ferme">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p84" org.eventb.core.predicate="valide(x ↦ x0)=oui">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p67" org.eventb.core.predicate="pers ↦ passeport_courant∈sas">
+<org.eventb.core.prIdent name="pers" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p58" org.eventb.core.predicate="etat2∈Etats2"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬porte1_ouverte=refus">
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p88" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie1∪sortie2∪{x ↦ x0}⇒valide(p)=valide(x ↦ x0)">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(sortie,sortie1,sortie2)"/>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬initial=refus">
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p62" org.eventb.core.predicate="∀pers⦂Personnes,pass1⦂Passeports,pass2⦂Passeports·⊤∧⊤∧⊤∧¬pass1=pass2∧pers ↦ pass1∈Queue_init⇒¬pers ↦ pass2∈Queue_init">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p50" org.eventb.core.predicate="⊤⇒finite(sas)"/>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬porte1_ouverte=porte1_fermee">
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="sortie=sortie1∪sortie2"/>
+<org.eventb.core.prPred name="p52" org.eventb.core.predicate="finite(sas)"/>
+<org.eventb.core.prPred name="p51" org.eventb.core.predicate="⊤⇒(∃x⦂Personnes,x0⦂Passeports·sas={x ↦ x0})"/>
+<org.eventb.core.prPred name="p80" org.eventb.core.predicate="Validite={valide(x ↦ passeport_courant),non}">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="Personnes"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="partition(Etats,{entree_sas},{sortie_sas},{lecture_pass})"/>
+<org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.exF"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+<org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r10" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="ouverture_porte2/inv26/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="Passeports,Personnes">
 <org.eventb.core.lang name="L"/>
@@ -35564,5 +35981,408 @@
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
 <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="inv25/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="p" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="Passeports,Personnes,Validite">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Validite,{oui},{non}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5,p6"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p5,p6"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Etats,{entree_sas},{sortie_sas},{lecture_pass}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8,p9,p10,p11"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p8,p9,p10,p11"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(OF,{ouvert},{ferme}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13,p14"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p13,p14"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Etats2,{initial},{porte1_ouverte},{porte1_fermee},{refus},{porte2_ouverte}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(queue_sas,queue_sas1,queue_sas2))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p27,p28"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p27,p28"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(sortie,sortie1,sortie2))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p29,p30"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p29,p30"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p31" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p32"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p33" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p34"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p35" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p36"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p37" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p38"/>
+<org.eventb.core.prHypAction name="REWRITE4" org.eventb.core.prHidden="p39" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p40"/>
+<org.eventb.core.prHypAction name="REWRITE5" org.eventb.core.prHidden="p41" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p42"/>
+<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p43" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p44"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p45"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p46"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p47"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p48"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p49"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p50"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p51"/>
+<org.eventb.core.prHypAction name="HIDE7" org.eventb.core.prHyps="p52"/>
+<org.eventb.core.prHypAction name="HIDE8" org.eventb.core.prHyps="p53"/>
+<org.eventb.core.prHypAction name="REWRITE9" org.eventb.core.prHidden="p32" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p54"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p54" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p55"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees p)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p56">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p56" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p58" org.eventb.core.prHyps="p57">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p58" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p59">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with queue_sas=queue_sas1∪queue_sas2" org.eventb.core.prHyps="p27">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p60" org.eventb.core.prInfHyps="p61"/>
+<org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p60"/>
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with sortie=sortie1∪sortie2" org.eventb.core.prHyps="p29">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p62" org.eventb.core.prInfHyps="p63"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p57" org.eventb.core.prInfHyps="p64"/>
+<org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p62,p57"/>
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p59" org.eventb.core.prHyps="p3">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p65">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p65" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p66">
+<org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p66" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p67">
+<org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p67" org.eventb.core.prHyps="p3"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="queue_sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="queue_sas1" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="queue_sas2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="sortie" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="sortie1" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="sortie2" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="valide" org.eventb.core.type="ℙ(Personnes×Passeports×Validite)"/>
+<org.eventb.core.prPred name="p65" org.eventb.core.predicate="p∈Personnes × Passeports">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="queue_sas1∩queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))"/>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="¬porte1_ouverte=porte2_ouverte">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p57" org.eventb.core.predicate="p∈sortie">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬entree_sas=sortie_sas">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="partition(Etats2,{initial},{porte1_ouverte},{porte1_fermee},{refus},{porte2_ouverte})">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p41" org.eventb.core.predicate="sas≠(∅ ⦂ ℙ(Personnes×Passeports))⇒queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))∧sortie1=(∅ ⦂ ℙ(Personnes×Passeports))">
+<org.eventb.core.prIdent name="sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p67" org.eventb.core.predicate="valide∈Personnes × Passeports ⇸ Validite"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="OF={ouvert,ferme}">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="∀pers⦂Personnes·∀pass⦂Passeports·valide(pers ↦ pass)=oui⇒valide_pass(pass)=oui">
+<org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
+<org.eventb.core.prIdent name="valide_pass" org.eventb.core.type="ℙ(Passeports×Validite)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬initial=porte1_ouverte">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p53" org.eventb.core.predicate="porte2∈OF">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="porte2" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬oui=non">
+<org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
+<org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬entree_sas=lecture_pass">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="lecture_pass" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p42" org.eventb.core.predicate="¬sas=(∅ ⦂ ℙ(Personnes×Passeports))⇒queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))∧sortie1=(∅ ⦂ ℙ(Personnes×Passeports))">
+<org.eventb.core.prIdent name="sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p44" org.eventb.core.predicate="¬queue_sas2=(∅ ⦂ ℙ(Personnes×Passeports))∨¬sortie1=(∅ ⦂ ℙ(Personnes×Passeports))⇒sas=(∅ ⦂ ℙ(Personnes×Passeports))">
+<org.eventb.core.prIdent name="sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p59" org.eventb.core.predicate="p∈dom(valide)">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personnes×Passeports·p∈sortie⇒p∈dom(valide)∧valide∈Personnes × Passeports ⇸ Validite"/>
+<org.eventb.core.prPred name="p45" org.eventb.core.predicate="Queue_init∈ℙ(Personnes × Passeports)">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="etat=sortie_sas⇒card(sas)=1">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="etat" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p63" org.eventb.core.predicate="sortie1∪sortie2∈ℙ(Queue_init)">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="Validite={oui,non}">
+<org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
+<org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p27" org.eventb.core.predicate="queue_sas=queue_sas1∪queue_sas2"/>
+<org.eventb.core.prPred name="p39" org.eventb.core.predicate="etat2∈{porte1_ouverte}⇔etat=entree_sas">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="etat" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="etat2" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="Etats2={initial,porte1_ouverte,porte1_fermee,refus,porte2_ouverte}">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p37" org.eventb.core.predicate="etat2∈{porte2_ouverte}⇔porte2=ouvert">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="etat2" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="porte2" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p49" org.eventb.core.predicate="etat∈Etats">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="etat" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="valide∈Personnes × Passeports → Validite"/>
+<org.eventb.core.prPred name="p55" org.eventb.core.predicate="∀pers⦂Personnes,pass1⦂Passeports,pass2⦂Passeports·¬pass1=pass2∧pers ↦ pass1∈Queue_init⇒¬pers ↦ pass2∈Queue_init">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p47" org.eventb.core.predicate="sortie_sas∈Etats">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬sortie_sas=lecture_pass">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="lecture_pass" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p61" org.eventb.core.predicate="queue_sas1∪queue_sas2∈ℙ(Queue_init)">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬porte1_fermee=porte2_ouverte">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬initial=porte2_ouverte">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p34" org.eventb.core.predicate="∀pers⦂Personnes,pass⦂Passeports·valide(pers ↦ pass)=oui⇒valide_pass(pass)=oui">
+<org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
+<org.eventb.core.prIdent name="valide_pass" org.eventb.core.type="ℙ(Passeports×Validite)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(queue_sas,queue_sas1,queue_sas2)"/>
+<org.eventb.core.prPred name="p52" org.eventb.core.predicate="porte1∈OF">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="porte1" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p46" org.eventb.core.predicate="entree_sas∈Etats">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p62" org.eventb.core.predicate="sortie∈ℙ(Queue_init)">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p50" org.eventb.core.predicate="passeport_courant∈Passeports">
+<org.eventb.core.prIdent name="passeport_courant" org.eventb.core.type="Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="Etats={entree_sas,sortie_sas,lecture_pass}">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="lecture_pass" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p38" org.eventb.core.predicate="etat2=porte2_ouverte⇔porte2=ouvert">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="etat2" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="porte2" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p48" org.eventb.core.predicate="lecture_pass∈Etats">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="lecture_pass" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬initial=porte1_fermee">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬refus=porte2_ouverte">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte2_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="¬porte1_fermee=refus">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="partition(Validite,{oui},{non})">
+<org.eventb.core.prIdent name="non" org.eventb.core.type="Validite"/>
+<org.eventb.core.prIdent name="oui" org.eventb.core.type="Validite"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="∀pers⦂Personnes,pass1⦂Passeports,pass2⦂Passeports·pers∈Personnes∧pass1∈Passeports∧pass2∈Passeports∧¬pass1=pass2∧pers ↦ pass1∈Queue_init⇒¬pers ↦ pass2∈Queue_init">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p64" org.eventb.core.predicate="p∈sortie1∪sortie2">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p30" org.eventb.core.predicate="sortie1∩sortie2=(∅ ⦂ ℙ(Personnes×Passeports))"/>
+<org.eventb.core.prPred name="p36" org.eventb.core.predicate="etat=sortie_sas⇒(∃x⦂Personnes,x0⦂Passeports·sas={x ↦ x0})">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="etat" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p43" org.eventb.core.predicate="queue_sas2≠(∅ ⦂ ℙ(Personnes×Passeports))∨sortie1≠(∅ ⦂ ℙ(Personnes×Passeports))⇒sas=(∅ ⦂ ℙ(Personnes×Passeports))">
+<org.eventb.core.prIdent name="sas" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p58" org.eventb.core.predicate="p∈dom(valide)∧valide∈Personnes × Passeports ⇸ Validite">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="∀pers⦂Personnes·∀pass1⦂Passeports·∀pass2⦂Passeports·pers∈Personnes∧pass1∈Passeports∧pass2∈Passeports∧pass1≠pass2∧pers ↦ pass1∈Queue_init⇒pers ↦ pass2∉Queue_init">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p66" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p40" org.eventb.core.predicate="etat2=porte1_ouverte⇔etat=entree_sas">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="etat" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="etat2" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p60" org.eventb.core.predicate="queue_sas∈ℙ(Queue_init)">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬ouvert=ferme">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="partition(OF,{ouvert},{ferme})">
+<org.eventb.core.prIdent name="OF" org.eventb.core.type="ℙ(OF)"/>
+<org.eventb.core.prIdent name="ferme" org.eventb.core.type="OF"/>
+<org.eventb.core.prIdent name="ouvert" org.eventb.core.type="OF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p51" org.eventb.core.predicate="etat2∈Etats2">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="etat2" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬porte1_ouverte=refus">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(sortie,sortie1,sortie2)"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬initial=refus">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="initial" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="refus" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p54" org.eventb.core.predicate="∀pers⦂Personnes,pass1⦂Passeports,pass2⦂Passeports·⊤∧⊤∧⊤∧¬pass1=pass2∧pers ↦ pass1∈Queue_init⇒¬pers ↦ pass2∈Queue_init">
+<org.eventb.core.prIdent name="Queue_init" org.eventb.core.type="ℙ(Personnes×Passeports)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬porte1_ouverte=porte1_fermee">
+<org.eventb.core.prIdent name="Etats2" org.eventb.core.type="ℙ(Etats2)"/>
+<org.eventb.core.prIdent name="porte1_fermee" org.eventb.core.type="Etats2"/>
+<org.eventb.core.prIdent name="porte1_ouverte" org.eventb.core.type="Etats2"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="sortie=sortie1∪sortie2"/>
+<org.eventb.core.prPred name="p56" org.eventb.core.predicate="p∈sortie⇒p∈dom(valide)∧valide∈Personnes × Passeports ⇸ Validite">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personnes×Passeports"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="partition(Etats,{entree_sas},{sortie_sas},{lecture_pass})">
+<org.eventb.core.prIdent name="Etats" org.eventb.core.type="ℙ(Etats)"/>
+<org.eventb.core.prIdent name="entree_sas" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="lecture_pass" org.eventb.core.type="Etats"/>
+<org.eventb.core.prIdent name="sortie_sas" org.eventb.core.type="Etats"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prExpr name="e0" org.eventb.core.expression="Personnes × Passeports"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+<org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 </org.eventb.core.prFile>
